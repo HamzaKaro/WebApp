@@ -1,0 +1,354 @@
+{
+    "actions": {
+        "change_language": "Changer de langue",
+        "translate_to": "Traduire en {language}",
+        "cancel": "Annuler",
+        "save": "Enregistrer",
+        "create": "Créer",
+        "filter": "Filtrer",
+        "close": "Fermer",
+        "back": "Retour",
+        "done": "Terminer"
+    },
+    "options": {
+        "yes": "Oui",
+        "no": "Non"
+    },
+    "generic": {
+        "language": "Langue",
+        "french": "Français",
+        "english": "Anglais",
+        "error": "Erreur"
+    },
+    "settings": {
+        "title": "Paramètres",
+        "language": "Langue",
+        "french": "Français",
+        "english": "English",
+        "theme": "Thème",
+        "dark": "Sombre",
+        "light": "Clair",
+        "language_changed": "La langue a été changée avec succès",
+        "theme_changed": "Le thème a été changé avec succès",
+        "sound_effects": "Effets sonores",
+        "visual_effects": "Effets visuels"
+    },
+    "auth": {
+        "login": "Se connecter",
+        "logout": "Se déconnecter",
+        "email": "Email",
+        "password": "Mot de passe",
+        "no_account_yet": "Pas encore de compte ?",
+        "create_an_account": "Créer un compte",
+        "error": {
+            "password_length": "Le mot de passe doit avoir plus de 6 caractères.",
+            "email_invalid": "Email invalide"
+        }
+    },
+    "signup": {
+        "already_have_account": "Vous avez déja un compte?",
+        "signup": "S'inscrire",
+        "choose_avatar": "Choisissez votre avatar",
+        "email_requirement": "Le email doit respecter ce format partie-locale@domaine (ex : panda@gmail.com )",
+        "error": {
+            "pseudo_characters": "Le pseudo doit avoir entre 5 et 16 caractères alphanumeriques"
+        }
+    },
+    "upload_avatar": {
+        "upload": "Téléverser",
+        "browse": "Parcourir",
+        "preview": "Aperçu de votre avatar",
+        "done": "Terminer",
+        "message": {
+            "loading": "Votre demande est en cours de traitement..."
+        },
+        "no_image_selected": "Aucune image sélectionnée",
+        "take_picture": "Prendre une photo"
+    },
+    "config_game": {
+        "title": "Configuration d'une partie de jeu",
+        "sub_title": "Scrabble Classique",
+        "pseudo_label": "Votre pseudonyme",
+        "time_label": "Minuterie par tour (en secondes)",
+        "human_player_nb_label": "Nombre de joueurs humains",
+        "visibility_mode_label": "Visibilité de la partie",
+        "private_mode_label": "Privée",
+        "public_mode_label": "Publique",
+        "password_label": "Mot de passe (Optionnel)",
+        "dictionary_label": "Dictionnaires",
+        "dictionary_radiotile": "Dictionnaire par défaut",
+        "return_button": "Retour",
+        "create_game_button": "Créer une partie",
+        "optional_password_msg": "Optionnel"
+    },
+    "homepage": {
+        "title": "Bienvenue sur PolyScrabble !",
+        "classic_scrabble_button": "Scrabble Classique",
+        "online_store_button": "Boutique en ligne",
+        "tutorial_button": "Tutoriel",
+        "creation_scrabble_expert": "Création d'une partie Scrabble Expert",
+        "welcome": "Bienvenue",
+        "creation_scrabble_classic": "Création d'une partie Scrabble Classique",
+        "creation_scrabble_classic_button": "Créer une partie multijoueur",
+        "join_multiplayer_game_button": "Joindre une partie multijoueur",
+        "return_button": "Retour"
+    },
+    "chat": {
+        "chat": "Clavardage",
+        "send": "Envoyer",
+        "create_channel": "Créer un nouveau canal",
+        "create_private_channel": "Créer une conversation privée",
+        "join_channel": "Rejoindre un canal",
+        "channel_name": "Nom du canal",
+        "type_chanel_name": "Tapez le nom du canal",
+        "channel_was_created": "Le canal {channel} a été créé",
+        "available_channels": "Canaux disponibles",
+        "DISMISS": "FERMER",
+        "leave_channel": "Quitter le canal",
+        "delete_channel": "Supprimer le canal",
+        "type_message": "Entrez votre message",
+        "error": {
+            "empty_message": "Le message ne peut pas être vide.",
+            "channel_name_too_long": "Le nom du canal ne peut pas dépasser 20 caractères.",
+            "empty_channel_name": "Le nom du canal ne peut pas être vide."
+        }
+    },
+    "room": {
+        "joiningRoom": "Rejoindre une partie classique",
+        "wait": "Vous êtes dans la salle d'attente",
+        "chooseGame": "Veuillez choisir une partie",
+        "room": "Salle",
+        "creator": "Créateur",
+        "timer": "Minuterie",
+        "dictionary": "Dictionnaire",
+        "nbHumans": "Humains",
+        "password": "Mot de passe",
+        "gameType": "Type de partie",
+        "public": "Publique",
+        "private": "Privée",
+        "join": "Rejoindre",
+        "observe": "Observer",
+        "noGames": "Aucune partie disponible",
+        "availableGames": "Parties disponibles",
+        "none": "Aucun",
+        "back": "Retour",
+        "waitForConfirmation": "Vous êtes dans une salle en attente de la confirmation du joueur adverse",
+        "rejected": "Vous avez été rejeté par le joueur adverse",
+        "full": "Vous ne pouvez pas rejoindre cette salle, car elle est inexistante ou pleine",
+        "easy": "Niveau Facile",
+        "quit": "Quitter la file d'attente",
+        "reject": "Rejeter",
+        "start": "Démarrer",
+        "player": "Joueur",
+        "noPlayers": "Aucun Joueur disponible",
+        "accept": "Accepter",
+        "nbBots": "Bots",
+        "nbObservers": "Observateurs",
+        "player1": "Joueur 1",
+        "player2": "Joueur 2",
+        "player3": "Joueur 3",
+        "player4": "Joueur 4"
+    },
+    "game": {
+        "give_up": "Abandonner",
+        "play": "Jouer",
+        "skip": "Passer",
+        "exchange": "Échanger",
+        "letters": "Lettres",
+        "quit": "Quitter"
+    },
+    "blog": {
+        "our_latest_posts": "Nos derniers articles",
+        "all_posts": "Tous les articles (admin)",
+        "publicly_accessible": "Accessible publiquement",
+        "create_post": "Créer l'article",
+        "create_new_post": "Créer un nouvel article",
+        "content": "Contenu",
+        "description": "Description",
+        "edit_article": "Modifier l'article",
+        "title": "Titre",
+        "see_all_posts": "Voir tous les articles",
+        "news": "Actualités",
+        "choose_cover_image": "Choisir image de couverture",
+        "status": "Statut",
+        "published": "Publié",
+        "draft": "Brouillon",
+        "archived": "Archivé",
+        "published_on": "Publié le ",
+        "updated_on": "Mis à jour le ",
+        "created_on": "Créé le ",
+        "delete_post": "Supprimer l'article",
+        "written_by": "Écrit par ",
+        "edit": "Éditer",
+        "post_created_successfully": "L'article a été créé avec succès",
+        "post_updated_successfully": "L'article a été mis à jour avec succès",
+        "error": {
+            "no_post_found": "Aucun article trouvé"
+        },
+        "no_post_written_yet": "Visiblement aucun article n'a été publié pour le moment. Nous vous prions de revenir plus tard."
+    },
+    "friend": {
+        "see_friend_list": "Liste d'amis",
+        "friend_added": " a ete ajoute a votre liste d'amis",
+        "friend_removed": " a ete retire de votre liste d'amis",
+        "friend_status_online": "En ligne",
+        "friend_status_offline": "Hors-ligne",
+        "friend_status_busy": "Occupé",
+        "friend_add_error": "L'utilisateur est introuvable ou est deja dans votre liste d'amis",
+        "friend_add_yourself": "Vous ne pouvez pas vous ajouter vous même",
+        "friend_invitation": "Invite ton ami",
+        "accept_invitation": "Accepter",
+        "deny_invitation": "Refuser",
+        "message_invitation": " vous invite à jouer",
+        "invite": "Inviter",
+        "friend_remove": "Retirer",
+        "friend_add": "Ajouter",
+        "status": "Status",
+        "username": "Pseudo",
+        "tap_username": "Taper le pseudo",
+        "no_friend": "Desole, vous n'avez pas encore d'amis disponibles"
+    },
+
+    "profile_menu": {
+        "statistics": "Statistiques",
+        "parameters": "Paramètres",
+        "profile": "Profil",
+        "disconnect": "Déconnexion",
+        "friends": "Liste d'amis"
+    },
+    "profile_page": {
+        "title": "Mon profil",
+        "avatar": "Modifier avatar",
+        "pseudo": "Nom d'utilisateur",
+        "email": "Email",
+        "cancel": "Annuler",
+        "save": "Sauvegarder",
+        "invalid_pseudo_length": "Le pseudo doit avoir entre 5-16 caractères alphanumériques",
+        "successful_pseudo_modification": "Modification de votre pseudo réussie",
+        "successful_avatar_modification": "Modification de votre avatar réussie",
+        "successful_modifications": "Modifications réussies",
+        "failed_pseudo_modification": "La modification de votre pseudo est un échec",
+        "failed_avatar_modification": "La modification de votre avatar est un échec"
+    },
+
+    "connexions_page": {
+        "connexions_summary": "Relevé des connexions",
+        "deconnexions_summary": "Relevé des déconnexions"
+    },
+    "statistics_page": {
+        "title": "Statistiques",
+        "games_history": "Historique des parties",
+        "number_games_played": "Nombre de parties jouées : ",
+        "number_games_won": "Nombre de parties gagnées : ",
+        "average_games_points": "Moyenne de points par partie : ",
+        "average_games_duration": "Temps moyen par partie : ",
+        "win": "Victoire",
+        "defeat": "Défaite",
+        "draw": "Égalité",
+        "abandon": "Abandon"
+    },
+    "rating": {
+        "title": "Évaluer l'application",
+        "average_rating": "Évaluation moyenne de l'application : ",
+        "thanks": "Merci d'avoir évalué l'application",
+        "obtain_reward": "Obtenir la récompense",
+        "validate": "Valider",
+        "congrats_message": "Félicitations ! Vous avez gagné 100 points",
+        "overall": "Évaluation globale"
+    },
+    "publicity": {
+        "obtain_reward": "Obtenir la rècompense",
+        "congrats_message": "Félicitations ! Vous avez gagné 50 points"
+    },
+    "search_definition": {
+        "title": "Rechercher une définition d'un mot",
+        "search_in_progress": "Recherche en cours...",
+        "word_not_found_error": "Désolé... nous n'avons pas réussi à trouver  le mot '{{value}}' dans notre dictionnaire",
+        "unknown_error": "Une erreur est survenue.. Veuillez réessayer plus tard"
+    },
+    "error_message": {
+        "avatar_missing": "Vous devez choisir un avatar"
+    },
+    "tutorial": {
+        "titles": {
+            "word_placement": "Règles de Scrabble - Placement",
+            "letter_without_accent": "Règles de Scrabble - Lettre avec un accent",
+            "special_letters": "Règles de Scrabble - Lettres spéciales",
+            "letter_points": "Règles de Scrabble - Pointage des lettres",
+            "score": "Interface - Scores",
+            "timer": "Interface - Minuterie",
+            "switch_letters": "Interface - Échanger vos lettres",
+            "placement": "Interface - Placement d'une lettre",
+            "give_up": "Interface - Abandonner",
+            "skip_turn": "Interface - Passer votre tour",
+            "board": "Interface - Plateau de jeu",
+            "chat": "Interface - Chat",
+            "search_definition": "Interface - Search definition",
+            "end_game": "Règles de Scrabble - Fin de partie",
+            "drag": "Interface - Glisser-déposer",
+            "keyboard_placement": "Interaction - Placement avec le clavier",
+            "red_tile": "Règles de Scrabble - Tuiles rouges/roses du plateau",
+            "blue_tile": "Règles de Scrabble - Tuiles bleues du plateau"
+        },
+        "descriptions": {
+            "word_placement": "Vous pouvez placer un mot à l'horizontal (de gauche à droite) ou de à la verticale (du haut vers le bas)",
+            "letter_without_accent": "Une lettre sans accent sera considérée comme son equivalent avec accent si cela permet de former un mot (ex : placer 'fès' s'écrit 'fes')",
+            "special_letters": "La lettre '*' peut remplacer n'importe quelle lettre (ex : *curie est équivalent au mot 'écurie'",
+            "letter_points": "Plus une lettre est rare, plus elle vaut de points",
+            "score": "Votre score est affiché sous votre nom",
+            "timer": "Vous avez une minute par tour pour jouer !",
+            "switch_letters": "Faites un clic droit sur un lettre de votre chevalet pour la sélectionner pour un échange",
+            "placement": "Vous pouvez confirmer votre placement en appuyant sur le bouton 'Jouer'",
+            "give_up": "Vous pouvez abandonner la partie en appuyant sur le bouton 'Abandonner'",
+            "skip_turn": "Vous pouvez passer votre tour en appuyant sur le bouton 'passer'",
+            "board": "Effectuer un clic sur le plateau permet vous permet de voir la direction de votre placement",
+            "chat": "Vous poouvez discuter avec vos adversaires lors d'une partie",
+            "search_definition": "Vous pouvez obtenir les définitions d'un mot en l'écrivant sans fautes d'orthographe",
+            "end_game": "1. Une partie se termine la réserve est vide et qu'un joueur vide son chevalet ou 2. Tous les joueurs passent leur tour 3 fois de suite",
+            "drag": "Vous pouvez glisser-déposer une lettre de votre chevalet vers le plateau",
+            "keyboard_placement": "Vous pouvez effectuer un placement en faisant un clic sur une case du plateau, puis tappant sur des lettres de votre chevalet sur votre clavier, puis en appuyant sur la touche ENTER. Pour enlever la dernière lettre placée, appuyez sur la touche BACKSPACE",
+            "red_tile": "Si une ou plusieurs lettres ont été ajoutées sur une case rose ou rouge, le pointage total du mot est doublé pour chaque case rose et triplé pour chaque case rouge.",
+            "blue_tile": "Lorsqu’une des lettres venant d’être ajoutées se trouve sur une case bleu pâle ou bleu foncé, sa valeur est respectivement doublée ou triplée avant d’ être additionnée aux autres."
+        }
+    },
+    "end_game": {
+        "title": "La partie est terminée",
+        "winners": "Félicitations aux joueurs suivants pour avoir gagné la partie  : "
+    },
+    "joker": {
+        "title": "Insérer la lettre désirée",
+        "info": "Cette modale est accessible en faisant un clic sur une tuile",
+        "hint": "Entrez juste une lettre",
+        "label": "Lettre blanche",
+        "error": "Vous devez écrire uniquement une lettre utilisée en français (ex : à)"
+    },
+    "confirmation_popup": {
+        "give_up": {
+            "header": "Voulez-vous vraiment abandonner ?",
+            "body": "Vous aurez un 'abandon' dans l'historique de vos Parametres"
+        }
+    },
+    "pages": {
+        "admin": "Admin"
+    },
+    "joker": {
+        "title": "Insérer la lettre désirée",
+        "info": "Cette modale est accessible en faisant un clic sur une tuile",
+        "hint": "Entrez juste une lettre",
+        "label": "Lettre blanche",
+        "error": "Vous devez écrire uniquement une lettre utilisée en français (ex : à)"
+    },
+    "shop": {
+        "title_page": "Bienvenue dans la boutique en ligne ! ",
+        "title_items_list": "Thèmes de couleur à acheter",
+        "title_shoppind_cart_list": "Votre panier d'achat",
+        "total_token_title": "Jetons totaux requis",
+        "not_enough_token_user_msg": "Jetons insuffisants pour compléter la transaction",
+        "current_token_user_msg": "Vos jetons totaux",
+        "empty_cart_msg": "Votre panier d'achat est vide pour le moment",
+        "empty_button": "Vider",
+        "buy_button": "Acheter",
+        "add_button": "Ajouter",
+        "return_button": "Retour"
+    }
+}

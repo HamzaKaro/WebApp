@@ -1,0 +1,25 @@
+<app-hearder></app-hearder>
+<div style="width: 800px; margin: auto; padding: 3rem 0" class="blog">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem" translate="blog.all_posts"></h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem" *ngIf="this.posts.length !== 0; else noPost">
+        <div style="display: flex; flex-direction: column" *ngFor="let post of posts; let index">
+            <div style="background: lightgrey; border-radius: 8px; height: 200px; margin-bottom: 1rem; object-fit: cover">
+                <img
+                    [src]="post.cover"
+                    *ngIf="post.cover"
+                    style="width: 100%; border-radius: 8px; max-height: 100%; object-fit: cover; height: 200px"
+                />
+            </div>
+            <a [routerLink]="redirectPath + post.id"
+                ><h3 style="font-weight: 600">{{ post.title }}</h3></a
+            >
+            <p>{{ post.description }}</p>
+            <small>{{ post.publishedAt | date }}</small>
+        </div>
+    </div>
+    <ng-template #noPost>
+        <p style="text-align: center" translate="blog.no_post_written_yet"></p>
+    </ng-template>
+    <button style="margin-top: 2rem" mat-raised-button color="basic" translate="actions.back" routerLink="/admin"></button>
+</div>

@@ -1,0 +1,23 @@
+<h2 translate="chat.available_channels"></h2>
+<div class="search-container">
+    <mat-form-field class="search-field" appearance="fill">
+        <mat-label translate="actions.filter"></mat-label>
+        <input matInput class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off">
+        <button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''">
+          <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+<div class="channels-list-container">
+    <mat-nav-list class="channels-container">
+        <div>
+            <mat-list-item *ngFor="let channel of getChannelsMatchingFilter();" (click)="joinChannel(channel)">
+                <mat-icon>add</mat-icon>{{channel}}
+            </mat-list-item>
+        </div>
+    </mat-nav-list>
+</div>
+<mat-dialog-actions>
+    <button mat-stroked-button (click)="close()" translate="actions.cancel"></button>
+</mat-dialog-actions>

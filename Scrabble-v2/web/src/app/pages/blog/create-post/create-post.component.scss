@@ -1,0 +1,31 @@
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 500px !important;
+}
+
+.create-button {
+    border-radius: 8px;
+    border: none;
+    padding: 1rem 2rem;
+    max-width: max-content;
+    display: block;
+    margin-left: auto;
+    background: var(--green-background);
+    color: white;
+    cursor: pointer;
+    &:disabled {
+        background-color: #ccc;
+        color: #fff;
+        cursor: not-allowed;
+    }
+}
+
+.lang-button {
+    border: none;
+    border-radius: 2px;
+    padding: 0.5rem 1rem;
+    background: lightblue;
+}
+
+.blog {
+    color: var(--textOnPrimary);
+}

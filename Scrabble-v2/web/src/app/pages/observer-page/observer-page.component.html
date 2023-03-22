@@ -1,0 +1,17 @@
+<div (click)="updateFocus($event)">
+    <div id="main-page-container">
+        <div class="side-container left-sidebar">
+            <app-players-infos></app-players-infos>
+            <div>{{ lettersBankCount }} <span translate="game.letters"></span></div>
+            
+        </div>
+        <app-observed-play-area></app-observed-play-area>
+        <div class="side-container right-sidebar">
+            <app-search-definition></app-search-definition>
+            <div id="button-container" class="flex-row">
+                <button class="button quit-button" (click)="confirmLeaving()" *ngIf="!isGameOver && !player.isObserver" (click)="playSound('GivingUp')" translate="game.give_up"></button>
+                <button class="button quit-button" (click)="leaveGame()" *ngIf="isGameOver || player.isObserver" translate="game.quit"></button>
+            </div>
+        </div>
+    </div>
+</div>

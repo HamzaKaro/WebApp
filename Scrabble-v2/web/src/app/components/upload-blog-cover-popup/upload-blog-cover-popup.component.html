@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>Selectionner ou importer un avatar</h2>
+<hr />
+<div>
+    <mat-dialog-content>
+        <div class="information-message-container" *ngIf="isProcessing">
+            <mat-icon>error_outline</mat-icon>
+            <div class="information-message">Votre demande est en cours de traitement...</div>
+            <mat-spinner [diameter]="20"></mat-spinner>
+        </div>
+        <div class="error-message-container" *ngIf="errorMessage">
+            <mat-icon>error_outline</mat-icon>
+            <div class="erro-messager">{{ errorMessage }}</div>
+        </div>
+        <div class="file-selection-container">
+            <div>
+                <div class="file-upload">
+                    <input
+                        type="file"
+                        class="file-input"
+                        (change)="onFileSelected($any($event.target).files)"
+                        hidden="true"
+                        #fileUpload
+                        accept="image/png, image/jpeg"
+                    />
+                    <button class="upload-btn" mat-flat-button color="warn" (click)="fileUpload.click()">Parcourir</button>
+                    <span class="file-selected"> {{ getFilename() || 'Aucun fichier choisi    ' }}</span>
+                    <button mat-flat-button color="primary" (click)="upload()" [disabled]="!isTypeOfFileToUploadValid() || isProcessing">
+                        Téléverser
+                    </button>
+                </div>
+                <div *ngIf="currentFileUpload" class="progress mt-2">
+                    <div
+                        class="progress-bar progress-bar-info"
+                        role="progressbar"
+                        attr.aria-valuenow="{{ percentage }}"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        [ngStyle]="{ width: percentage + '%' }"
+                    >
+                        {{ percentage }}%
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="preview-avatar" *ngIf="hasSelected()">
+            <article>
+                <img fxFlex="nogrow" class="gallery__picture" [src]="urlAvatarPreview" />
+            </article>
+            <h2>Apercu de votre image de couverture</h2>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions end class="popup-buttons">
+        <button mat-stroked-button mat-dialog-close [disabled]="!hasSelected()" (click)="close()" translate="actions.done"></button>
+        <button mat-stroked-button mat-dialog-close translate="actions.cancel"></button>
+    </mat-dialog-actions>
+</div>

@@ -1,0 +1,34 @@
+<app-hearder></app-hearder>
+
+<div style="max-width: 1000px; margin: 3rem auto; padding: 2rem" class="blog">
+    <div *ngIf="post; else notFound">
+        <div style="background: lightgrey; height: 200px; width: 100%; border-radius: 8px; object-fit: cover">
+            <img
+                *ngIf="post.cover"
+                fxFlex="nogrow"
+                style="max-height: 100%; border-radius: 8px; object-fit: cover; width: 100%; height: auto"
+                alt="cover"
+                [src]="post.cover"
+            />
+        </div>
+        <h1 style="font: bold; font-size: 2.5rem; margin: 1.5rem 0">{{ post.title }}</h1>
+        <div></div>
+        <div style="white-space: pre-wrap; margin: 2rem 0" [innerHTML]="post.content"></div>
+        <hr />
+        <div style="padding: 2rem 0">
+            <p>
+                <span translate="blog.written_by"></span> <span>{{ post.author || 'Admin' }}</span>
+            </p>
+            <p>
+                <span translate="blog.published_on"></span> <span>{{ post.publishedAt | date: 'medium' }}</span>
+            </p>
+            <p>
+                <span translate="blog.updated_on"></span> <span>{{ post.updatedAt | date: 'medium' }}</span>
+            </p>
+        </div>
+    </div>
+    <ng-template #notFound>
+        <p translate="blog.error.no_post_found"></p>
+    </ng-template>
+    <button style="margin-top: 2rem" mat-raised-button color="basic" translate="actions.back" routerLink="/blog"></button>
+</div>

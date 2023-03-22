@@ -1,0 +1,104 @@
+<header>
+    <div class="icon hidden-icon">
+        <button mat-fab color="primary" class="fab-button">
+            <mat-icon class="fab-icon">more_horiz</mat-icon>
+        </button>
+    </div>
+    <img src="assets/scrabble_hero.png" alt="Logo Scrabble" />       
+    <div class="icon hidden-icon">
+        <button mat-fab color="primary" class="fab-button">
+            <mat-icon class="fab-icon">more_horiz</mat-icon>
+        </button>
+    </div>
+</header>
+
+<body>
+    <div *ngIf="dictionaryExistsOnServer">
+        <div class="container-loading">
+            <app-game-wait-loading></app-game-wait-loading>
+        </div>
+
+        <div class="container gray-box">
+            <div class="information-message-container information" *ngIf="roomStatusText">
+                <mat-icon>error_outline</mat-icon>
+                <div class="information-message" translate={{ roomStatusText }}></div>
+            </div>
+            <div class="button-container">
+                <!-- <div>
+                    <button class="button" routerLink="/game/multiplayer/create/solo" [disabled]="readyToStart" (click)="onGoToSolo()">
+                        Jouer en solo
+                    </button>
+                </div> -->
+                <div>
+                    <button class="button" [disabled]="!readyToStart" (click)="acceptPlayers()" translate="room.start"></button>
+                </div>
+                <div>
+                    <button class="button important-button" (click)="openInvitationPopup()" [disabled]="readyToStart">Inviter</button>
+                </div>
+                <div>
+                    <button class="button" (click)="rejectPlayers(); playSound('Selection-options')" routerLink="/game/multiplayer/create" translate="room.quit">
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="games">
+                    <tr>
+                        <th translate="room.room"></th>
+                        <th translate="room.nbHumans"></th>
+                        <th translate="room.creator"></th>
+                        <th translate="room.player2"></th>
+                        <th translate="room.player3"></th>
+                        <th translate="room.player4"></th>
+                        <th translate="room.timer"></th>
+                        <th translate="room.dictionary"></th>
+                        <th *ngIf="room.roomInfo.isPublic&&room.roomInfo.pw!==''" translate="room.password"></th>
+                        <th translate="room.gameType"></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>{{ room.roomInfo.name }}</td>
+                        <td>{{ room.roomInfo.nbHumans }}</td>
+                        <td>{{ firstPlayerPseudo }}</td>
+                        <td>{{ secondPlayerPseudo }}</td>
+                        <td>{{ thirdPlayerPseudo }}</td>
+                        <td>{{ forthPlayerPseudo }}</td>
+                        <td>{{ room.roomInfo.timerPerTurn }}</td>
+                        <td> Default </td>
+                        <td *ngIf="room.roomInfo.isPublic&&room.roomInfo.pw!==''">{{room.roomInfo.pw}}</td>
+                        <td *ngIf="room.roomInfo.isPublic" translate="room.public"></td>
+                        <td *ngIf="!room.roomInfo.isPublic" translate="room.private"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <table id="games">
+                    <tr *ngFor="let player of pendingPlayers; index as i;">
+                        <th>player</th>
+                        <th>{{player.pseudo}} </th>
+                        <th>
+                            <button class="button important-button" (click)="addPlayerPending(i); playSound('Selection-options')" [disabled]="readyToStart" translate="room.accept"></button>
+                        </th>
+                        <th>
+                            <button class="button cancel-button" (click)="rejectPlayer(player); playSound('Selection-options')" [disabled]="readyToStart" translate="room.reject"></button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="center" *ngIf="!dictionaryExistsOnServer">
+        <div class="gray-box">
+            <div class="error-message-container">
+                <mat-icon>error_outline</mat-icon>
+                <div class="error-message">Votre partie n'existe plus car votre dictionnaire a été effacé</div>
+            </div>
+            <div class="button-container">
+                <div>
+                    <button class="button important-button" routerLink="/home" translate="room.quit"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

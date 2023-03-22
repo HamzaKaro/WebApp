@@ -1,0 +1,27 @@
+<app-hearder></app-hearder>
+
+<body>
+    <p class="title"><span translate="homepage.creation_scrabble_classic"></span></p>
+    <div class="container justified">
+        <div class="error-message-container" *ngIf="room.roomInfo.gameType !== 'log2990' && room.roomInfo.gameType !== 'classic'">
+            <mat-icon>error_outline</mat-icon>
+            <div class="error-message">Votre mode de jeu est invalide, veuillez revenir en arrière</div>
+        </div>
+        <section id="game_creation">
+            <div class="justified gray-box">
+                <!-- <button class="button" routerLink="/game/multiplayer/create/solo" (click)="playSound('Selection-options')">
+                    Jouer une partie en solo
+                </button> -->
+                <button class="button" routerLink="/game/multiplayer/create/multi" (click)="playSound('Selection-options')">
+                    <span translate="homepage.creation_scrabble_classic_button"></span>
+                </button>
+                <button class="button" routerLink="/game/multiplayer/join" (click)="playSound('Selection-options')">
+                    <span translate="homepage.join_multiplayer_game_button"></span>
+                </button>
+                <button class="button important-button" routerLink="/home" (click)="playSound('Selection-options')">
+                    <span translate="homepage.return_button"></span>
+                </button>
+            </div>
+        </section>
+    </div>
+</body>

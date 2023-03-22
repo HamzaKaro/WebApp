@@ -1,0 +1,6 @@
+<span class="rack">
+<span class="tile" (click)="updateFocus($event)" #rackContainer *ngFor="let tile of this.room.racks[rackIndex]" >
+    {{tile.toUpperCase()}}
+    <sup class="score">{{getScore(tile)}}</sup>
+</span>
+</span>

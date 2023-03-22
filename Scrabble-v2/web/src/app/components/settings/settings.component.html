@@ -1,0 +1,40 @@
+<body>
+    <p class="title" translate="settings.title"></p>
+    <div class="flex-container">
+        <form [formGroup]="settingsForm">
+            <div class="stylish-input">
+                <label translate="settings.language" translate="generic.language"></label>
+                <select class="input" formControlName="language" (change)="changeLanguage()" [value]="language">
+                    <option [selected]="'en' === language" value="en" translate="settings.english"></option>
+                    <option [selected]="'fr' === language" value="fr" translate="settings.french"></option>
+                </select>
+            </div>
+            <div class="stylish-input">
+                <label translate="settings.theme"> </label>
+                <select class="input" formControlName="theme" (change)="changeTheme()" [value]="theme">
+                    <option *ngFor='let type of themes' [selected]="type === theme">{{type}}</option>
+                </select>
+            </div>
+            <div class="stylish-input">
+                <label translate="settings.sound_effects"></label>
+                <label> Off </label>
+                <label class="switch">
+                    <input type="checkbox" formControlName="soundAnimations" (checked)="(soundAnimations)" (change)="soundAnimationsOnChange()" />
+                    <span class="slider round"></span>
+                </label>
+                <label> On </label>
+            </div>
+            <div class="stylish-input">
+                <label translate="settings.visual_effects"></label>
+                <label> Off </label>
+                <label class="switch">
+                    <input type="checkbox" formControlName="visualAnimations" (checked)="(visualAnimations)" (change)="visualAnimationsOnChange()" />
+                    <span class="slider round"></span>
+                </label>
+                <label> On </label>
+            </div>
+
+            <button class="button" (click)="saveSettings(); playSound('Selection-options')" translate="actions.save"></button>
+        </form>
+    </div>
+</body>

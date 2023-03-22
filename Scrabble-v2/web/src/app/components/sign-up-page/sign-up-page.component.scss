@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.sign-up-page-container {
+    display: flex;
+    max-width: 33%;
+    width: 25vw;
+    min-width: 25vw;
+    max-width: 25vw;
+    flex-direction: column;
+}
+
+.sign-up-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.connect-button {
+    width: 100%;
+}
+
+.sign-up-page-container h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+.error-message-container {
+    margin-bottom: 16px;
+}
+
+img {
+    border-radius: 50%;
+    width: 16%;
+    height: 16%;
+    }
+.preview-avatar{
+    margin: 0 auto;
+    text-align: center;
+}
+.preview-avatar img{
+    width: 100px;
+    height: 100px;
+}

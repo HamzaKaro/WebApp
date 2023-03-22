@@ -1,0 +1,10 @@
+<p>{{ currentStep + 1 }} / {{ steps.length }}</p>
+<img src="{{ steps[currentStep].imageURL }}" alt="{{ steps[currentStep].imageAlt }}" width="500" height="300px" />
+
+<h1 translate="{{ steps[currentStep].titleTranslationKey }}"></h1>
+<p translate="{{ steps[currentStep].descriptionTranslationKey }}"></p>
+<mat-dialog-actions>
+    <button mat-stroked-button *ngIf="currentStep > 0" (click)="previousStep(); playSound('Selection-options')" color="primary">Précédent</button>
+    <button mat-flat-button *ngIf="!isOver()" (click)="nextStep(); playSound('Selection-options')" color="primary">Suivant</button>
+    <button mat-flat-button *ngIf="isOver()" (click)="close(); playSound('Selection-options')" color="primary">Terminer</button>
+</mat-dialog-actions>

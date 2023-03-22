@@ -1,0 +1,84 @@
+<mat-list-item *ngIf="itemsShoppingCart.name === items[0].name">
+    <div class="parent grid-parent">
+        <div class="child">
+            <div class="theme-options">
+                <div id="theme-candy"></div>
+            </div>
+        </div>
+        <div class="child">{{ itemsShoppingCart.name }}</div>
+        <div class="child">{{ itemsShoppingCart.price }} <mat-icon [ngStyle]="{ color: 'rgb(224, 173, 33)' }">generating_tokens </mat-icon></div>
+        <div class="child">
+            <button (click)="removeItemFromCart(itemsShoppingCart)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-list-item>
+
+<mat-list-item *ngIf="itemsShoppingCart.name === items[1].name">
+    <div class="parent grid-parent">
+        <div class="child">
+            <div class="theme-options">
+                <div id="theme-sky"></div>
+            </div>
+        </div>
+        <div class="child">{{ itemsShoppingCart.name }}</div>
+        <div class="child">{{ itemsShoppingCart.price }} <mat-icon [ngStyle]="{ color: 'rgb(224, 173, 33)' }">generating_tokens </mat-icon></div>
+        <div class="child">
+            <button (click)="removeItemFromCart(itemsShoppingCart)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-list-item>
+
+<mat-list-item *ngIf="itemsShoppingCart.name === items[2].name">
+    <div class="parent grid-parent">
+        <div class="child">
+            <div class="theme-options">
+                <div id="theme-nature"></div>
+            </div>
+        </div>
+        <div class="child">{{ itemsShoppingCart.name }}</div>
+        <div class="child">{{ itemsShoppingCart.price }} <mat-icon [ngStyle]="{ color: 'rgb(224, 173, 33)' }">generating_tokens </mat-icon></div>
+        <div class="child">
+            <button (click)="removeItemFromCart(itemsShoppingCart)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-list-item>
+
+<mat-list-item *ngIf="itemsShoppingCart.name === items[3].name">
+    <div class="parent grid-parent">
+        <div class="child">
+            <div class="theme-options">
+                <div id="theme-christmas"></div>
+            </div>
+        </div>
+        <div class="child">{{ itemsShoppingCart.name }}</div>
+        <div class="child">{{ itemsShoppingCart.price }} <mat-icon [ngStyle]="{ color: 'rgb(224, 173, 33)' }">generating_tokens </mat-icon></div>
+        <div class="child">
+            <button (click)="removeItemFromCart(itemsShoppingCart)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-list-item>
+
+<mat-list-item *ngIf="itemsShoppingCart.name === items[4].name">
+    <div class="parent grid-parent">
+        <div class="child">
+            <div class="theme-options">
+                <div id="theme-halloween"></div>
+            </div>
+        </div>
+        <div class="child">{{ itemsShoppingCart.name }}</div>
+        <div class="child">{{ itemsShoppingCart.price }} <mat-icon [ngStyle]="{ color: 'rgb(224, 173, 33)' }">generating_tokens </mat-icon></div>
+        <div class="child">
+            <button (click)="removeItemFromCart(itemsShoppingCart)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-list-item>

@@ -1,0 +1,25 @@
+<button mat-fab color="primary" class="fab-button" [matMenuTriggerFor]="menu">
+  <mat-icon class="fab-icon">more_horiz</mat-icon>
+</button>
+<mat-menu #menu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="openPopup('profile')">
+    <mat-icon>account_circle</mat-icon>
+    <span translate="profile_menu.profile"></span>
+  </button>
+    <button mat-menu-item (click)="openPopup('parameters'); this.soundService.controllerSound('Selection-options')">
+    <mat-icon>settings</mat-icon>
+    <span translate="profile_menu.parameters"></span>
+  </button>
+    <button mat-menu-item (click)="openPopup('statistics'); this.soundService.controllerSound('Selection-options')">
+      <mat-icon>analytics</mat-icon>
+      <span translate="profile_menu.statistics"></span>
+    </button>
+    <button mat-menu-item (click)="openPopup('friendlist'); this.soundService.controllerSound('Selection-options')">
+        <mat-icon>group</mat-icon>
+        <span translate="profile_menu.friends"></span>
+      </button>
+    <button mat-menu-item (click)="logout(); this.soundService.controllerSound('Selection-options')">
+    <mat-icon>logout</mat-icon>
+    <span translate="profile_menu.disconnect"></span>
+  </button>
+</mat-menu>

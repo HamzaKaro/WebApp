@@ -1,0 +1,47 @@
+<div class="main-container">
+  <mat-dialog-content >
+    
+    <div class="gray-box">
+          <h1 translate="friend.see_friend_list"></h1>
+              <div class="error-message-container" *ngIf="errorMessage">
+                  <mat-icon>error_outline</mat-icon>
+                  <div class="error-message" *ngIf="errorMessage === 'erreur ajout'" translate="friend.friend_add_error"></div>
+                  <div class="error-message" *ngIf="errorMessage === 'ajout impossible'" translate="friend.friend_add_yourself"></div>
+              </div>
+          <form [formGroup]="friendlistForm">
+                  <div matLine class="stylish-input search">
+                      <input type="text" placeholder="Tap username" matInput formControlName="usernameToAdd">
+                      <button type="button" class="button" (click)="addFriend()" translate="friend.friend_add"></button>
+                  </div>
+          </form>
+      <!-- </div> -->
+          <div class="inboxContainer">
+              <table class="styled-table">
+                  <thead>
+                      <tr>
+                        <th translate="friend.username"></th>
+                        <th translate="friend.status"></th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let username of friendsUsername.value; let i = index;">
+                        <td>{{ username }}</td>
+  
+                        <td>
+                          <span class ="dot" [ngClass]="friendsStatus[i]"></span>
+                          <span *ngIf="friendsStatus[i] ==='Busy'" translate="friend.friend_status_busy"></span>
+                          <span *ngIf="friendsStatus[i] ==='Online'" translate="friend.friend_status_online"></span>
+                          <span *ngIf="friendsStatus[i] ==='Offline'" translate="friend.friend_status_offline"></span>
+                        </td>
+                        <td><button mat-raised-button type="button" class ="button remove" color="warn" (click)="removeFriend(friendsEmail.value[i])">
+                          <span class="badge" translate="friend.friend_remove"></span>
+                      </button></td>
+                  </tr>
+                  <div #load class="loader"></div>           
+                    </tbody>   
+              </table>
+          </div>
+      </div>
+  </mat-dialog-content>
+</div>

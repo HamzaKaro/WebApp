@@ -1,0 +1,14 @@
+<div class="page-container">
+    <div class="history-type-container">
+        <h1 translate="connexions_page.connexions_summary"></h1>
+        <div class=" history-container ">
+            <p *ngFor="let connexion of this.loggedUser.connexions.slice().reverse() " class="log">{{connexion}}</p>
+        </div>
+    </div>
+    <div class="history-type-container " *ngIf=" this.loggedUser.deconnexions.length> 0">
+        <h1 translate="connexions_page.deconnexions_summary"></h1>
+        <div class="history-container">
+            <p *ngFor="let deconnexion of this.loggedUser.deconnexions.slice().reverse()" class="log">{{deconnexion}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<h2 mat-dialog-title translate="chat.create_channel"></h2>
+<hr>
+
+<mat-dialog-content>
+    <form class="edit-bot-form" [formGroup]="channelForm">
+        <mat-form-field class="full-width-field" appearance="fill">
+            <mat-label translate="chat.channel_name"></mat-label>
+            <input type="name" matInput formControlName="name">
+        </mat-form-field>
+
+        <div style="color: red;" *ngIf="channelName.value.length > 20">
+            <span translate="chat.channel_name_too_long"></span></div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-stroked-button mat-dialog-close (click)="close() " translate="actions.cancel"></button>
+    <button mat-flat-button [disabled]="!isFormValid() " (click)="addChannel() " translate="actions.create"></button>
+</mat-dialog-actions>

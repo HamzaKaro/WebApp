@@ -1,0 +1,21 @@
+.content {
+    border-color: black;
+}
+
+// .theme-options {
+//     margin: 0 auto;
+//     div {
+//         width: 40px;
+//         height: 40px;
+//         border-radius: 4px;
+//     }
+// }
+
+.grid-parent {
+    display: grid;
+    grid-template-columns: 1fr 7fr 4fr 1fr;
+}
+
+.parent {
+    width: 460px;
+}
