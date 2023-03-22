@@ -1,0 +1,30 @@
+<app-hearder></app-hearder>
+
+<body>
+    <p class="title" translate="homepage.title"></p>
+    <div class="main-container">
+        <div class="gray-box">
+            <button class="button" (click)="setGameType('classic')" routerLink="/game/option" (click)="playSound('Selection-options')" translate="homepage.classic_scrabble_button"></button>
+            <button class="button" routerLink="/virtual-store" (click)="playSound('Selection-options')">
+                <span translate="homepage.online_store_button"></span>
+            </button>
+            <button class="button" (click)="openTutorial(); playSound('Selection-options')">
+                <span translate="homepage.tutorial_button"></span>
+            </button>
+            <button class="button" routerLink="/blog" translate="blog.news" (click)="playSound('Selection-options')"></button>
+            <!-- <button class="button" (click)="openPublicity(); playSound('Selection-options')">Ouvrir la pub</button> -->
+            <button *ngIf="userIsAdmin()" class="button" routerLink="/admin" translate="pages.admin" (click)="playSound('Selection-options')"></button>
+            <!-- <app-pseudo-input></app-pseudo-input> -->
+        </div>
+
+        <div>
+            <mat-icon class="black-icon" (click)="getRatingsAverage()">refresh icon</mat-icon>
+            <!-- <span translate="rating.average_rating"></span><span>{{ ratingsAverage }} / 5</span> -->
+            <form class="rating-form" [formGroup]="form5">
+                <p translate="rating.overall"></p>
+                <ngx-star-rating [disabled]='true' formControlName="rating"></ngx-star-rating>
+                <span>{{ ratingsAverage }} / 5</span>
+            </form>
+        </div>
+    </div>
+</body>

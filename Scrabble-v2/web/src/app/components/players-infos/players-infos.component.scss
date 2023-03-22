@@ -1,0 +1,101 @@
+#dictionary-text {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.player-panel.player-active {
+    border: #38cb3e 2px solid;
+    background-color: #79e27c;
+}
+
+.player-panel.player-winner {
+    background-color: #e9af4e;
+}
+
+.client-player.player-panel.player-active {
+    border: #38cb3e 2px solid;
+    background-color: #79e27c;
+}
+
+.client-player.player-panel.player-winner {
+    background-color: #e9af4e;
+}
+
+.players-names {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    color: var(--textOnSecondary)
+}
+
+.player-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: var(--textOnSecondary) 2px solid;
+    background-color: var(--grayBoxbackground);
+    border-radius: 5px;
+    margin-right: 10px;
+
+    transition: box-shadow 0.5s, background-color 0.5s, transform 0.15s, border 0.15s;
+}
+.player-panel.client-player div {
+    font-weight: bold;
+}
+
+.player-panel:hover {
+    transform: translateY(-2px);
+}
+
+.player-panel div {
+    color: var(--textOnPrimary);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+}
+
+.timer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: var(--textOnPrimary);
+    padding: 1rem 2rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    width: max-content;
+    text-align: center;
+    border: 2px solid var(--textOnPrimary);
+    border-radius: 8px;
+    background-color: var(--grayBoxbackground);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #515151;
+}
+
+button {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.player {
+    border: 1px solid var(--textOnPrimary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 1rem 0;
+    width: 340px;
+    background-color: var(--grayBoxbackground);
+}
+
+.player.is-current {
+    border: #38cb3e 2px solid;
+    background-color: var(--turnColor);
+}

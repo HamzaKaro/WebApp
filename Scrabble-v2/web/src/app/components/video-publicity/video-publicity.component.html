@@ -1,0 +1,12 @@
+<div *ngIf="!rewardClaimed" class="video-container">
+    <video #ad (ended)="handleVideoEnding()" width="400px" height="300px" controls id="video" (seeking)="preventSkippingTime()" (timeupdate)="handleTimeUpdate($event)">
+        <!-- <source src=" assets/videos/tractor.mp4 " type="video/mp4 "> -->
+        <source src={{videoPath}} type="video/mp4 ">
+    </video>
+    <button mat-flat-button color="primary" (click)="claimReward()" [disabled]="!isVideoCompleted" translate="publicity.obtain_reward"></button>
+</div>
+
+<div class="information-message-container" *ngIf="rewardClaimed">
+    <mat-icon>error_outline</mat-icon>
+    <div class=" information-message " translate="publicity.congrats_message"></div>
+</div>

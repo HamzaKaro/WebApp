@@ -1,0 +1,134 @@
+<header>
+    <div class="icon hidden-icon">
+        <button mat-fab color="primary" class="fab-button">
+            <mat-icon class="fab-icon">more_horiz</mat-icon>
+        </button>
+    </div>
+    <img src="assets/scrabble_hero.png" alt="Logo Scrabble" />       
+    <div class="icon hidden-icon">
+        <button mat-fab color="primary" class="fab-button">
+            <mat-icon class="fab-icon">more_horiz</mat-icon>
+        </button>
+    </div>
+</header>
+<body>
+    <p translate="room.joiningRoom" class="title" ></p>
+    <div class="flex-container">
+        <div class="join-container" *ngIf="websiteHasAvailableRooms() && !isPending">
+            <div class="gray-box" id="main-container">
+                <div class="information-message-container" *ngIf="room.roomInfo.gameType === 'log2990' || room.roomInfo.gameType === 'classic'">
+                    <mat-icon>error_outline</mat-icon>
+                    <div translate="room.chooseGame" class="information-message"></div>
+                </div>
+                <div class="information-message-container" *ngIf="isInRoom">
+                    <mat-icon>error_outline</mat-icon>
+                    <div translate="room.wait" class="information-message"></div>
+                </div>
+                <div class="error-message-container" *ngIf="room.roomInfo.gameType !== 'log2990' && room.roomInfo.gameType !== 'classic'">
+                    <mat-icon>error_outline</mat-icon>
+                    <div class="error-message">Votre mode de jeu est invalide, veuillez revenir en arrière</div>
+                </div>
+
+                <div class="error-message-container" *ngIf="!isRoomStatusTextEmpty()">
+                    <mat-icon>error_outline</mat-icon>
+                    <div class="error-message" translate={{roomStatusText}}></div>
+                </div> 
+
+                <div class="table-container">
+                    <h2 translate="room.availableGames"></h2>
+                    <table id="games">
+                        <tr>
+                            <th translate="room.room"></th>
+                            <th translate="room.creator"></th>
+                            <th translate="room.timer"></th>
+                            <th translate="room.nbHumans"></th>
+                            <th translate="room.nbBots"></th>
+                            <th translate="room.nbObservers"></th>
+                            <th translate="room.password"></th>
+                            <th translate="room.gameType"></th>
+                        </tr>
+                        <tr *ngFor="let availableRoom of availableRooms">
+                            <td>{{ availableRoom.roomInfo.name }}</td>
+                            <td>{{ availableRoom.players[0].pseudo }}</td>
+                            <td>{{ availableRoom.roomInfo.timerPerTurn }}</td>
+                            <td>{{ getNbHumans(availableRoom) }}</td>
+                            <td>{{ getNbBots(availableRoom) }}</td>
+                            <td>{{ getNbObservers(availableRoom) }}</td>
+                            <td *ngIf="availableRoom.roomInfo.isPublic && availableRoom.roomInfo.pw !== ''">
+                                <input class="input" type="text" id="pw" name="pw" autocomplete="off" [(ngModel)]="pw" />
+                            </td>
+                            <td *ngIf="!(availableRoom.roomInfo.isPublic && availableRoom.roomInfo.pw !== '')" translate="room.none"></td>
+                            <td *ngIf="availableRoom.roomInfo.isPublic" translate="room.public"></td>
+                            <td *ngIf="!availableRoom.roomInfo.isPublic" translate="room.private"></td>
+                            <td>
+                                <button 
+                                    class="button join-button"
+                                    *ngIf="availableRoom.players && !availableRoom.isGameStarted"
+                                    (click)="askToJoin(availableRoom)"
+                                    [disabled]="
+                                        isInRoom ||
+                                        availableRoom.roomInfo.gameType !== room.roomInfo.gameType ||
+                                        (pw !== availableRoom.roomInfo.pw && availableRoom.roomInfo.pw !== '' && availableRoom.roomInfo.isPublic) ||
+                                        availableRoom.nbHumanPlayers === availableRoom.roomInfo.nbHumans
+                                    "
+                                    translate="room.join"
+                                >
+                                </button>
+                                <button 
+                                class="button"
+                                *ngIf="availableRoom.isGameStarted && availableRoom.roomInfo.isPublic"
+                                (click)="observeGame(availableRoom)"
+                                [disabled]="
+                                    isInRoom ||
+                                    availableRoom.roomInfo.gameType !== room.roomInfo.gameType ||
+                                    (pw !== availableRoom.roomInfo.pw && availableRoom.roomInfo.pw !== '' && availableRoom.roomInfo.isPublic)
+                                "
+                                translate="room.observe"
+                            ></button>
+                            </td>
+                        </tr>
+                        <tr *ngIf="!availableRooms.length">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button  class="button" [disabled]="true" translate="room.join"></button>
+                            </td>
+                        </tr>
+                    </table>
+                    <button class="button important-button" (click)="leaveRoom(room.roomInfo.name)" routerLink="/game/option " translate="room.back"></button>
+                </div>
+                <div *ngIf="!websiteHasAvailableRooms()"></div>
+            </div>
+        </div>
+
+        <div class="join-container" *ngIf="!websiteHasAvailableRooms() && !isPending">
+            <div class="gray-box" id="main-container">
+                <div class="information-message-container">
+                    <mat-icon>error_outline</mat-icon>
+                    <div class="information-message" translate="room.noGames"></div>
+                </div>
+                <div class="error-message-container" *ngIf="!isRoomStatusTextEmpty()">
+                    <mat-icon>error_outline</mat-icon>
+                    <div class="error-message" translate={{roomStatusText}}></div>
+                </div>
+                <div class="confirm-buttons-container">
+                    <button class="button important-button" (click)="leaveRoom(room.roomInfo.name)" routerLink="/game/option " translate="room.back"></button>
+                </div>
+            </div>
+        </div>
+        <div class="join-container" *ngIf="isPending">
+            <div class="gray-box" id="main-container">
+                <div class="information-message-container">
+                    <mat-icon>error_outline</mat-icon>
+                    <div class="information-message"translate={{roomStatusText}}></div>
+                </div>
+                <div class="back-button-container">
+                    <button class="button important-button" (click)="leaveRoom(room.roomInfo.name)" routerLink="/game/option " translate="room.back"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

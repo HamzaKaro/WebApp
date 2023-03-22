@@ -1,0 +1,15 @@
+<div class="message-container-wrapper">
+    <div class="message-container" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <div *ngFor="let message of messagesHistory; let i = index" class="message-wrapper">
+            <!-- TODO check that avatar exists -->
+            <img *ngIf="isAvatarValid(message.avatar)" src="{{ message.avatar}}" class=" avatar ">
+            <div *ngIf="!isAvatarValid(message.avatar)" class=" avatar "></div>
+            <div class="message " [ngStyle]="{ 'background-color': getMessageColor(message) } ">
+                <div class="message-box ">
+                    <p class="message-sender "><b>{{ message.sender }}</b></p>
+                    <p class="message-content ">{{message.text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

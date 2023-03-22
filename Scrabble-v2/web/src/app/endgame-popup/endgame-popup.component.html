@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>{{description.header}}</h2>
+<hr>
+
+<mat-dialog-content>
+    <p class="popup-body">{{description.body}}</p>
+
+    <app-video-publicity videoPath="assets/videos/publicity.mp4 "></app-video-publicity>
+</mat-dialog-content>
+<mat-dialog-actions class="popup-actions">
+    <button mat-flat-button color="primary" (click)="handleUserAnswer(true)" translate="actions.close"></button>
+</mat-dialog-actions>

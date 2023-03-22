@@ -1,0 +1,109 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    gap: 100px;
+}
+.gray-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: black;
+    // width: fit-content;
+}
+
+:host {
+    color: var(--textOnPrimary);
+}
+
+.item-list-title {
+    display: flex;
+    justify-content: center;
+}
+.footer-item {
+    text-align: center;
+}
+
+.parent {
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+    gap: 30px;
+}
+.child {
+    display: inline-block;
+    border: 1px solid red;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+}
+
+.cancel {
+    background-color: rgb(62, 138, 170);
+    box-shadow: #481408 0 -7px 0px inset;
+    width: 150px;
+}
+
+.buy {
+    width: 150px;
+}
+
+.container > .button:not(:last-child) {
+    margin-right: 50px;
+}
+
+.content-list {
+    padding: 10px;
+
+    margin: 10px;
+    display: inline-block;
+    // flex-direction: column;
+    // flex-wrap: wrap;
+}
+
+.parent {
+    height: 200px;
+    width: 600px;
+    background-color: white;
+}
+.mat-list {
+    height: 200px;
+    width: 800px;
+}
+
+.viewport {
+    height: 130px;
+    width: 75%;
+    // border: 1px solid black;
+}
+.alternate {
+    background: rgba(127, 127, 127, 0.3);
+}
+
+.mat-form-field {
+    margin-right: 17px;
+}
+
+.information-message-container {
+    margin-top: 70px;
+}
+
+.important-information {
+    display: flex;
+}
+
+::ng-deep .custom-style button {
+    color: white;
+}

@@ -1,0 +1,27 @@
+<div class="page-container">
+    <h2 translate="profile_page.title" class="header-title"></h2>
+    <article>
+        <img class="gallery__picture" alt="Avatar" [src]="urlAvatar">
+    </article>
+    <button mat-flat-button color="primary" (click)="openUploadAvatarPopup()" translate="profile_page.avatar"></button>
+    <form class="text-parameters-form" [formGroup]="form">
+
+        <mat-form-field class="full-width-field mat-input-bg" appearance="fill" id="specific-border" appearance="outline">
+            <mat-label translate="profile_page.pseudo"></mat-label>
+            <input type="name" matInput [value]="this.pseudo.value" formControlName="pseudo">
+        </mat-form-field>
+        <div style="color: red;" *ngIf="pseudo.invalid && pseudo.value.length > 0" translate="profile_page.invalid_pseudo_length"></div>
+
+        <mat-form-field class="full-width-field" appearance="outline">
+            <mat-label translate="profile_page.email"></mat-label>
+            <input type="name" matInput [value]="this.form.controls.email.value" formControlName="email">
+        </mat-form-field>
+
+    </form>
+    <div class="action-buttons-container">
+        <button mat-stroked-button (click)="cancelModifications()" *ngIf="userAccountChanged()" translate="profile_page.cancel"></button>
+        <button mat-flat-button color="primary" (click)="registerModifications()" [disabled]="!isRegisterable()" translate="profile_page.save"></button>
+    </div>
+    <app-connexions-history class="history-container"></app-connexions-history>
+    <app-rating></app-rating>
+</div>

@@ -1,0 +1,34 @@
+.search-container {
+    min-width: 500px;
+    max-width: 500px;
+    color: var(--textOnPrimary);
+    border-radius: 10px;
+    border : 2px solid var(--textOnPrimary);
+    background-color: var(--grayBoxbackground);
+    // position: absolute;
+}
+
+.search-title{
+    color: var(--textOnPrimary);
+}
+.search-container mat-form-field,
+input {
+    min-width: 100%;
+}
+
+#definitions-container {
+    // border: 1px solid grey;
+    min-height: 200px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.hidden-button {
+    visibility: hidden;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

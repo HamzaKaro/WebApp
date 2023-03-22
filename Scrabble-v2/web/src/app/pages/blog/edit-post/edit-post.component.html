@@ -1,0 +1,83 @@
+<app-hearder></app-hearder>
+
+<div style="max-width: 800px; margin: 2rem auto; padding: 2rem" class="blog">
+    <div>
+        <h1 style="font-size: 2.5rem; text-align: center" translate="blog.edit_article"></h1>
+        <div
+            style="
+                margin: 2rem 0;
+                position: relative;
+                background: lightgrey;
+                border: 1px solid lightgrey;
+                height: 200px;
+                width: 100%;
+                border-radius: 8px;
+                object-fit: cover;
+            "
+        >
+            <img
+                *ngIf="urlCover"
+                fxFlex="nogrow"
+                style="max-height: 100%; border-radius: 8px; object-fit: cover; width: 100%; height: auto"
+                alt="cover"
+                [src]="urlCover"
+            />
+            <button
+                style="position: absolute; top: 0; right: 0; left: 0; bottom: 0; margin: auto; max-width: max-content; max-height: max-content"
+                mat-flat-button
+                color="primary"
+                (click)="openUploadCoverPopup()"
+                translate="blog.choose_cover_image"
+            ></button>
+        </div>
+        <p style="background: #ff9494; padding: 1rem 2rem" *ngIf="errorMessage"><span translate="generic.error">:</span>{{ errorMessage }}</p>
+        <form [formGroup]="formdata" (ngSubmit)="onSave()">
+            <div style="display: flex; flex-direction: column; gap: 1.5rem">
+                <label style="display: flex; flex-direction: column; gap: 1rem">
+                    <span translate="blog.title"></span>
+                    <input formControlName="title" type="text" placeholder="Article #1" style="padding: 0.8rem" type="text" />
+                </label>
+                <label style="display: flex; flex-direction: column; gap: 1rem">
+                    <span translate="blog.description"></span>
+                    <input type="text" formControlName="description" placeholder="Description Article #1" style="padding: 0.8rem" />
+                </label>
+                <div>
+                    <label style="display: flex; flex-direction: column; gap: 1rem">
+                        <span translate="blog.content"></span>
+
+                        <textarea formControlName="content" style="width: 100%; display: block; height: 300px"></textarea>
+                    </label>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center">
+                    <div style="margin: 1rem 0">
+                        <span translate="blog.status" style="margin-right: 1rem"></span>
+                        <select name="" id="" formControlName="status">
+                            <option value="published" translate="blog.published"></option>
+                            <option value="draft" translate="blog.draft"></option>
+                            <option value="archived" translate="blog.archived"></option>
+                        </select>
+                    </div>
+                    <button type="submit" translate="actions.save" mat-flat-button color="primary" [disabled]="!formdata.valid"></button>
+                </div>
+            </div>
+        </form>
+        <button
+            (click)="deletePost()"
+            type="button"
+            style="
+                margin: 2rem auto;
+                background: #ed5e67;
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                display: block;
+                max-width: max-content;
+                cursor: pointer;
+                border: none;
+            "
+            [disabled]="!post"
+            translate="blog.delete_post"
+        ></button>
+    </div>
+    <button mat-raised-button color="basic" translate="actions.back" routerLink="/admin"></button>
+</div>

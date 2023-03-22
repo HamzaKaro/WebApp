@@ -1,0 +1,343 @@
+{
+    "actions": {
+        "change_language": "Change language",
+        "translate_to": "Traduire en {language}",
+        "cancel": "Cancel",
+        "save": "Save",
+        "create": "Create",
+        "filter": "Filter",
+        "close": "Close"
+    },
+    "generic": {
+        "language": "Language",
+        "french": "Français",
+        "english": "English"
+    },
+    "auth": {
+        "login": "Login",
+        "logout": "Logout",
+        "password": "Password",
+        "no_account_yet": "No account yet?",
+        "create_an_account": "Create an account",
+        "disconnection_success": "You have been disconnected successfully.",
+        "error": {
+            "password_length": "The password should have at least 6 characters.",
+            "email_invalid": "Invalid email"
+        }
+    },
+    "signup": {
+        "already_have_account": "You already have an account?",
+        "signup": "Sign up",
+        "choose_avatar": "Choose your avatar",
+        "email_requirement": "Email should follow this format local-part@domain (ex : panda@gmail.com )",
+        "error": {
+            "pseudo_characters": "Username should contains between 5 and 16 charachters"
+        }
+    },
+    "upload_avatar": {
+        "upload": "Upload",
+        "browse": "Browse",
+        "preview": "Preview of your avatar",
+        "done": "Done",
+        "message": {
+            "loading": "Your request is being processed..."
+        },
+        "no_image_selected": "No image selected",
+        "take_picture": "Take a picture"
+    },
+    "homepage": {
+        "title": "Welcome to PolyScrabble !",
+        "classic_scrabble_button": "Classic Scrabble",
+        "online_store_button": "Online Store",
+        "tutorial_button": "Tutorial",
+        "creation_scrabble_classic": "Creation of Scrabble Classic game",
+        "creation_scrabble_classic_button": "Create a multiplayer game",
+        "join_multiplayer_game_button": "Join a multiplayer game",
+        "configuration_of_game": "Configuration of new game",
+        "return_button": "Return"
+    },
+    "config_game": {
+        "title": "Setting up a new game",
+        "sub_title": "Classic Scrabble",
+        "pseudo_label": "Your username",
+        "time_label": "Timer per turn (in seconds)",
+        "human_player_nb_label": "Number of human players",
+        "visibility_mode_label": "Game visibility",
+        "private_mode_label": "Private",
+        "public_mode_label": "Public",
+        "password_label": "Password",
+        "dictionary_label": "Dictionaries",
+        "dictionary_radiotile": "Default dictionary",
+        "return_button": "Return",
+        "create_game_button": "Create a game",
+        "optional_password_msg": "Optional"
+    },
+    "app_bar_menu": {
+        "profile": "Profile",
+        "settings": "Settings",
+        "stats": "Statistics",
+        "connexion_history": "Connexion history",
+        "friendlist": "Friendlist",
+        "logout": "Logout"
+    },
+    "chat": {
+        "chat": "Chat",
+        "send": "Send",
+        "create_channel": "Create a new channel",
+        "channel_name": "Channel name",
+        "type_chanel_name": "Type the channel name",
+        "channel_was_created": "The channel {channel} was created",
+        "join_channel": "Join a channel",
+        "available_channels": "Available channels",
+        "you_left_channel": "You left the channel {channel}",
+        "you_joined_channel": "You joined the channel {channel}",
+        "leave_channel": "Leave channel",
+        "delete_channel": "Delete channel",
+        "DISMISS": "DISMISS",
+        "type_message": "Type your message",
+
+        "error": {
+            "empty_message": "The message cannot be empty.",
+            "empty_channel_name": "The channel name cannot be empty.",
+            "channel_name_too_long": "The channel name cannot be longer than 20 characters.",
+            "you_are_already_in_channel": "You are already in the channel {channel}",
+            "channel_cant_be_general": "The channel name cannot be 'General'.",
+            "channel_cant_start_with_MP": "The channel name cannot start with 'MP:'."
+        },
+        "create_private_conversation": "Create a private conversation"
+    },
+    "room": {
+        "joiningRoom": "Join a Classic Game",
+        "waiting_room": "Waiting Room",
+        "wait": "You are in a waiting room",
+        "chooseGame": "Please Choose a game",
+        "room": "Room",
+        "creator": "Creator",
+        "timer": "Timer",
+        "dictionary": "Dictionary",
+        "nbHumans": "Humans",
+        "password": "Password",
+        "gameType": "Game Type",
+        "public": "Public",
+        "private": "Private",
+        "join": "Join",
+        "observe": "Observe",
+        "noGames": "No Games found",
+        "availableGames": "Available Games",
+        "none": "None",
+        "back": "Back",
+        "waitForConfirmation": "You are in a waiting room",
+        "rejected": "Unfortunately, you've been rejected",
+        "full": "Vous ne pouvez pas rejoindre cette salle, car elle est inexistante ou pleine",
+        "easy": "Level Easy",
+        "quit": "Quit the Waiting Room",
+        "reject": "Reject",
+        "start": "Start",
+        "player": "Player",
+        "noPlayers": "No Players Found",
+        "accept": "Accept",
+        "nbBots": "Bots",
+        "nbObservers": "Observers",
+        "player1": "Player 1",
+        "player2": "Player 2",
+        "player3": "Player 3",
+        "player4": "Player 4"
+    },
+    "game": {
+        "give_up": "Give up",
+        "quit": "Quit",
+        "play": "Play",
+        "skip": "Skip",
+        "exchange": "Exchange",
+        "letters": "Letters"
+    },
+    "blog": {
+        "publicly_accessible": "Publicly accessible",
+        "create_post": "Create post",
+        "create_new_post": "Create a new post",
+        "content": "Content",
+        "description": "Description",
+        "title": "Title",
+        "news": "News",
+        "our_latest_posts": "Our latest posts",
+        "published_on": "Published on ",
+        "updated_on": "Updated on ",
+        "created_on": "Created on ",
+        "delete_post": "Delete post",
+        "no_content": "No content",
+        "no_description": "No description",
+        "no_title": "No title",
+        "written_by": "Written by ",
+        "upload_cover_image": "Upload cover image",
+        "must_not_be_empty": "This field must not be empty",
+        "edit_post": "Edit post",
+        "save": "Save",
+        "post_created_successfully": "Post created successfully. You were redirected to the edit page.",
+        "post_updated_successfully": "Post updated successfully",
+        "an_error_occurred": "An error occurred. Please try again later.",
+        "see_all_posts": "See all posts",
+        "all_posts": "All posts (admin)",
+        "post_deleted_successfully": "Post deleted successfully",
+        "delete": "Delete",
+        "edit": "Edit",
+        "error_while_deleting_post": "An error occurred while deleting the post. Please try again later.",
+        "no_post_written_yet": "It seems like no article has been published so far. Please come back later."
+    },
+    "friend": {
+        "see_friend_list": "Friend List",
+        "friend_added": " has been added to your friendlist",
+        "friend_removed": " has been removed from your friendlist",
+        "friend_status_online": "Online",
+        "friend_status_offline": "Offline",
+        "friend_status_busy": "Busy",
+        "friend_add_error": "User not found or already in your friendlist",
+        "friend_add_yourself": "You can not add yourself as a friend",
+        "friend_invitation": "Invite your friend",
+        "accept_invitation": "Accept",
+        "deny_invitation": "Deny",
+        "message_invitation": " invites you to play",
+        "invite": "Invite",
+        "friend_remove": "Remove",
+        "friend_add": "Add",
+        "status": "Status",
+        "username": "Username",
+        "tap_username": "Tap username",
+        "no_friend": "Sorry, you do not have available friends yet"
+    },
+    "profile_menu": {
+        "statistics": "Statistics",
+        "parameters": "Parameters",
+        "profile": "Profile",
+        "disconnect": "Disconnect",
+        "friends": "Friends list"
+    },
+    "profile_page": {
+        "title": "My profile",
+        "avatar": "Modify avatar",
+        "pseudo": "Username",
+        "email": "Email",
+        "cancel": "Cancel",
+        "save": "Save",
+        "invalid_pseudo_length": "Your username must have between 5-16 alphanumeric characters",
+        "successful_pseudo_modification": "Modification of your username is successful",
+        "successful_avatar_modification": "Modification of zour avatar is successful",
+        "successful_modifications": "Modifications successful",
+        "failed_pseudo_modification": "The modification of your pseudo failed",
+        "failed_avatar_modification": "The modification of your avatar failed"
+    },
+    "connexions_page": {
+        "connexions_summary": "Conexions summary",
+        "deconnexions_summary": "Deconexions summary"
+    },
+    "statistics_page": {
+        "title": "Statistics",
+        "games_history": "Games history",
+        "number_games_played": "Number of games played : ",
+        "number_games_won": "Number of games won : ",
+        "average_games_points": "Average points per game : ",
+        "average_games_duration": "Average game duration : ",
+        "win": "Win",
+        "defeat": "Defeat",
+        "draw": "Draw",
+        "abandon": "Give up"
+    },
+    "rating": {
+        "title": "Rate the application",
+        "average_rating": "Average rating of the application : ",
+        "thanks": "Thanks for rating the application",
+        "obtain_reward": "Claim reward",
+        "validate": "Validate",
+        "coins_reward_message": "You earned 100 points !",
+        "overall": "Overall Evaluation"
+    },
+    "publicity": {
+        "publicity": "Publicity",
+        "obtain_reward": "Claim reward",
+        "congrats_message": "Congrats ! You won 50 points"
+    },
+
+    "search_definition": {
+        "title": "Search for the definition of a word",
+        "search_in_progress": "Search in progress...",
+        "hint_text": "Type a word",
+        "definitions": "Definition of the word ",
+        "word_not_found_error": "Sorry... We are unable to find the word '{word}' in our dictionary",
+        "unknown_error": "An error occurred... please try again later"
+    },
+    "error_message": {
+        "avatar_missing": "You should choose an avatar",
+        "hint_text": "Type a word"
+    },
+    "tutorial": {
+        "title": "Tutorial",
+        "next": "Next",
+        "previous": "Previous",
+        "finish": "Finish",
+        "titles": {
+            "word_placement": "Rules of Scrabble - Placement",
+            "letter_without_accent": "Rules of Scrabble - Letter with an accent",
+            "special_letters": "Rules of Scrabble - Special letter",
+            "letter_points": "Rules of Scrabble - Points of a letter",
+            "score": "Interface - Scores",
+            "timer": "Interface - Timer",
+            "switch_letters": "Interface - Switch letters",
+            "placement": "Interface - Placing a letter",
+            "give_up": "Interface - Give up",
+            "skip_turn": "Interface - Skip your turn",
+            "board": "Interface - Board",
+            "chat": "Interface - Chat",
+            "search_definition": "Interface - Search definition",
+            "shake": "Device shaking - Cancel placement",
+            "end_game": "Rules of Scrabble - End of game",
+            "drag": "Interface - Drag and drop",
+            "red_tile": "Rules of Scrabble - Pink/Red tiles on the board",
+            "blue_tile": "Rules of Scrabble - Blue tiles on the board"
+        },
+        "descriptions": {
+            "word_placement": "You can place a word horizontally from left to right or vertically up to down",
+            "letter_without_accent": "A letter without an accent will be considered like its equivalent with accent if it can allow the formation of a word",
+            "special_letters": "The letter '*' can replace any lette (ex. *curie is equivalent to the 'écurie'",
+            "letter_points": "Plus une lettre est rare, plus elle vaut de points",
+            "score": "Your score is show below your name",
+            "timer": "You have one minute to play !",
+            "switch_letters": "Right click on your rack to select a letter for an exchange",
+            "placement": "You can confirm your placement by clicking on the 'Play' button",
+            "give_up": "You can give up by pressing on the 'Give up' button",
+            "skip_turn": "You can skip your turn by pressing on the 'Skip' button",
+            "board": "Left clicking on the board allow you to see the direction of your placement",
+            "chat": "You can discuss with your opponents when you are in-game",
+            "search_definition": "You can search for the definition(s) of a word by spelling it correctly",
+            "shake": "You can shake your device up and down to remove the letters placed on the board",
+            "end_game": "1. The game end if the letter bank is empty and a player empty his rack or 2. Every player skip their turn 3 times in a row",
+            "drag": "You can drag and drop the letters from your rack to the board",
+            "red_tile": "If one or more letters were added on a pink or red tile, the total of the word is doubled for each pink tile or tripled for each red tile",
+            "blue_tile": "The value of a letter placed on a light blue tile is doubled. The value of a letter placed on a dark blue tile is tripled"
+        }
+    },
+    "pages": {
+        "admin": "Admin"
+    },
+    "end_game": {
+        "title": "The game is over",
+        "winners": "Congratulations to the following player(s) for winning the game : "
+    },
+    "joker": {
+        "title": "Insert the desired letter",
+        "info": "This modal is available by clicking on a tile",
+        "hint": "Type only one letter",
+        "label": "Wildcard letter",
+        "error": "You must only type a letter used in french (ex : à)"
+    },
+    "shop": {
+        "title_page": "Welcome to the online store ! ",
+        "title_items_list": "Color themes to buy",
+        "title_shoppind_cart_list": "Your shopping cart",
+        "total_token_title": "Total tokens required",
+        "not_enough_token_user_msg": "Not enough tokens to complete the transaction",
+        "current_token_user_msg": "Total tokens",
+        "empty_cart_msg": "Your shopping cart is empty at the moment",
+        "empty_button": "Empty",
+        "buy_button": "Buy",
+        "return_button": "Return"
+    }
+}

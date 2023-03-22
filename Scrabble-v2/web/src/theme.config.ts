@@ -1,0 +1,75 @@
+import { Colors } from '@app/enums/colors';
+
+export const THEMES = {
+    light: {
+        headerColor: '#7daf6b',
+        primaryColor: Colors.White,
+        secondaryColor: '#7daf6b', // Buttons
+        textOnPrimary: Colors.Black, // Text
+        textOnSecondary: Colors.White, // Text on buttons
+        background: Colors.White,
+        grayBoxbackground: '#f5f4f2',
+        turnColor: Colors.Green,
+    },
+    dark: {
+        headerColor: '#7daf6b',
+        primaryColor: Colors.Black,
+        secondaryColor: '#7daf6b',
+        textOnPrimary: Colors.White,
+        textOnSecondary: Colors.Black,
+        background: '#101216',
+        grayBoxbackground: '#525452',
+        turnColor: '#457d47',
+    },
+    uni: {
+        headerColor: '#0A0331',
+        primaryColor: '#CADDEE',
+        secondaryColor: '#25077A',
+        textOnPrimary: Colors.Black,
+        textOnSecondary: Colors.White,
+        background: '#CADDEE',
+        grayBoxbackground: '#AFD4F5',
+        turnColor: '#67e367',
+    },
+    fallGuys: {
+        headerColor: '#EEF1ED',
+        primaryColor: '#732299',
+        secondaryColor: '#25077A',
+        textOnPrimary: Colors.White,
+        textOnSecondary: Colors.White,
+        background: '#732299',
+        grayBoxbackground: '#8360E7',
+        turnColor: Colors.Green,
+    },
+    bubbleTea: {
+        headerColor: '#FFF4FC',
+        primaryColor: '#b9b8f5',
+        secondaryColor: '#8360E7',
+        textOnPrimary: Colors.White,
+        textOnSecondary: Colors.White,
+        // background: '#7673EB',
+        background: '#b9b8f5',
+        grayBoxbackground: '#421FA6',
+        turnColor: Colors.Green,
+    },
+    minecraft: {
+        headerColor: '#05561C',
+        primaryColor: '#04230F',
+        secondaryColor: '#7D4A0D',
+        textOnPrimary: Colors.White,
+        textOnSecondary: Colors.White,
+        background: '#04230F',
+        grayBoxbackground: '#103F20',
+        turnColor: Colors.Green,
+    },
+    halloween: {
+        headerColor: '#B15229',
+        primaryColor: '#000000',
+        secondaryColor: '#671301',
+        textOnPrimary: Colors.White,
+        textOnSecondary: Colors.White,
+        background: '#000000',
+        grayBoxbackground: '#FE7411',
+        turnColor: Colors.Green,
+    },
+};

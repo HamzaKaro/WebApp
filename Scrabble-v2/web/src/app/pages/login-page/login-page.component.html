@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="login-page-container">
+        <h1 translate="auth.login"></h1>
+
+        <div class="error-message-container" *ngIf="errorMessage">
+            <mat-icon>error_outline</mat-icon>
+            <div class="error-message">{{ errorMessage }}</div>
+        </div>
+
+        <form class="login-form" [formGroup]="signUpForm" autocomplete="on">
+            <mat-form-field class="full-width-field" appearance="fill">
+                <mat-label translate="auth.email"></mat-label>
+                <input type="text" matInput formControlName="email" [disabled]="isValidatingCredentials" />
+            </mat-form-field>
+
+            <mat-form-field class="full-width-field" appearance="fill">
+                <mat-label translate="auth.password"></mat-label>
+                <input type="password" matInput formControlName="password" [disabled]="isValidatingCredentials" />
+            </mat-form-field>
+        </form>
+
+        <button class="button connect-button" (click)="login()" [disabled]="isValidatingCredentials">Se connecter</button>
+        <a class="sign-up" [routerLink]="['/sign-up']" translate="auth.create_an_account"></a>
+        <div class="translate-section">
+            <button  class="button translate-button"(click)="changeLanguage('en')">Translate to English</button>
+            <button class="button translate-button" (click)="changeLanguage('fr')">Traduire en français</button>
+        </div>
+    </div>
+</div>

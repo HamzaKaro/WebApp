@@ -1,0 +1,3 @@
+const MIN_RATING_VALUE = 1;
+const MAX_RATING_VALUE = 5;
+const RATING_COIN_REWARD = 100;

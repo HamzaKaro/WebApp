@@ -1,0 +1,29 @@
+.mat-card-content {
+    width: 70px;
+    height: 120px;
+}
+
+.mat-card-header {
+    width: 120px;
+}
+
+.mat-card-image {
+    max-width: 80px;
+    max-height: 80px;
+    margin-top: 5px;
+    margin-left: 19px;
+}
+
+.gray {
+    background-color: rgba(128, 128, 128, 0.6);
+}
+
+.mat-card-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.price-content {
+    margin-left: 50px;
+    font-size: 15px;
+}

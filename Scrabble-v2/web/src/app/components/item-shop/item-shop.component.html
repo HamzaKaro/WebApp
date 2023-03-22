@@ -1,0 +1,39 @@
+<mat-card class="mat-elevation-z4" *ngIf="isAvailable(item.name)">
+    <mat-card-header>
+        <mat-card-title>{{ item.name }} </mat-card-title>
+    </mat-card-header>
+
+    <img *ngIf="item.name === 'uni'" mat-card-image src="./assets/shop/Uni.jpg" />
+
+    <img *ngIf="item.name === 'fallGuys'" mat-card-image src="./assets/shop/FallGuys.jpg" />
+
+    <img *ngIf="item.name === 'minecraft'" mat-card-image src="./assets/shop/Minecraft.jpg" />
+
+    <img *ngIf="item.name === 'bubbleTea'" mat-card-image src="./assets/shop/BubbleTea.jpg" />
+
+    <img *ngIf="item.name === 'halloween'" mat-card-image src="./assets/shop/Halloween.jpg" />
+    <div class="price-content">{{ item.price }} <mat-icon [ngStyle]="{ color: 'rgb(224, 173, 33)' }">generating_tokens </mat-icon></div>
+    <mat-card-actions>
+        <button mat-button (click)="addItemToCart(item)"><span translate="shop.add_button"></span></button>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card class="mat-elevation-z4 gray" *ngIf="!isAvailable(item.name)">
+    <mat-card-header>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+    </mat-card-header>
+
+    <img *ngIf="item.name === 'uni'" mat-card-image src="./assets/shop/Uni.jpg" />
+
+    <img *ngIf="item.name === 'fallGuys'" mat-card-image src="./assets/shop/FallGuys.jpg" />
+
+    <img *ngIf="item.name === 'minecraft'" mat-card-image src="./assets/shop/Minecraft.jpg" />
+
+    <img *ngIf="item.name === 'bubbleTea'" mat-card-image src="./assets/shop/BubbleTea.jpg" />
+
+    <img *ngIf="item.name === 'halloween'" mat-card-image src="./assets/shop/Halloween.jpg" />
+
+    <mat-card-actions>
+        <button [disabled]="isDisabled" mat-button (click)="addItemToCart(item)">Ajouter</button>
+    </mat-card-actions>
+</mat-card>

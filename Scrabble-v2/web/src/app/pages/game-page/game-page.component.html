@@ -1,0 +1,24 @@
+<div (click)="updateFocus($event)">
+    <div id="main-page-container">
+        <div class="side-container left-sidebar">
+            <app-players-infos></app-players-infos>
+            <div>{{ lettersBankCount }} <span translate="game.letters"></span></div>
+            <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                <button id="command-but-1" class="button command-but" (click)="onPlay()" translate="game.play" [disabled]="!isMyTurn() || isGameOver"></button>
+                <button id="command-but-2" class="button command-but" (click)="onExchange()" translate="game.exchange" [disabled]="!isMyTurn() || isGameOver" r></button>
+                <button id="command-but-3" class=" button command-but" (click)="onSkip() " translate="game.skip" [disabled]="!isMyTurn() || isGameOver "></button>
+            </div>
+        </div>
+        <app-play-area></app-play-area>
+        <div class="side-container right-sidebar ">
+
+            <button class="button " (click)="openTutorial(); playSound( 'Selection-options') ">
+                <span translate="homepage.tutorial_button"></span></button>
+            <app-search-definition></app-search-definition>
+            <div id="button-container " class="flex-row ">
+                <button class="button quit-button " (click)="confirmLeaving() " *ngIf="!isGameOver " (click)="playSound( 'GivingUp') " translate="game.give_up"></button>
+                <button class="button quit-button " (click)="goBackToHome() " *ngIf="isGameOver " translate="game.quit"></button>
+            </div>
+        </div>
+    </div>
+</div>

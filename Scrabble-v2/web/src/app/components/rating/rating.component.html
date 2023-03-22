@@ -1,0 +1,15 @@
+<form class="rating-form" *ngIf="!isRatingDone()" [formGroup]="form">
+    <p translate="rating.title" class="text-with-primary-color"></p>
+    <ngx-star-rating formControlName="rating" [id]="'rating'"></ngx-star-rating>
+    <!-- <div>Rating: {{form.value.rating}}</div> -->
+    <button *ngIf="form.valid" (click)="sendRating()" translate="rating.validate"></button>
+</form>
+<div *ngIf="isRatingDone() && !loggedUser.receivedRatingReward">
+    <p translate="rating.thanks"></p>
+    <button *ngIf="!loggedUser.receivedRatingReward" (click)="claimReward()" translate="rating.obtain_reward"></button>
+</div>
+
+<!-- <div class="information-message-container " *ngIf="loggedUser.receivedRatingReward ">
+    <mat-icon>error_outline</mat-icon>
+    <div class=" information-message " translate="rating.congrats_message "></div>
+</div> -->

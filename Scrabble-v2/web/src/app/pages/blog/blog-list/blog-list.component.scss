@@ -1,0 +1,11 @@
+.blog {
+    color: var(--textOnPrimary);
+
+    a,
+    a:visited {
+        color: var(--textOnPrimary);
+    }
+    a:hover {
+        color: var(--primaryColor);
+    }
+}

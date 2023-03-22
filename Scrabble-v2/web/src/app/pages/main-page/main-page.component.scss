@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background: var(--primaryColor);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    gap: 100px;
+}
+
+.gray-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    color: black;
+    width: fit-content;
+}
+
+.footer-item {
+    text-align: center;
+}
+
+.footer-item p :nth-child(even) {
+    color: #1b6fec;
+}
+
+.footer-item p :nth-child(odd) {
+    color: #29e0a3;
+}
+
+.rating-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-form p,
+.rating-form span {
+    color: var(--textOnPrimary)
+}

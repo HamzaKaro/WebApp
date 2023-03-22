@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    align-items: center;
+    height: 120vh;
+}
+
+.login-page-container {
+    display: flex;
+    max-width: 33%;
+    width: 25vw;
+    min-width: 25vw;
+    max-width: 25vw;
+    flex-direction: column;
+
+    .sign-up {
+        padding-top: 20px;
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.connect-button {
+    width: 100%;
+}
+.translate-section{
+    padding-top: 300px;
+    display: flex;
+    align-items: center;
+    .translate-button {
+        width: 70%;
+        margin: 2px;
+        background-color: beige;
+        color: rgb(108, 102, 102);
+    }
+}
+
+.login-page-container h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-message-container {
+    margin-bottom: 16px;
+}

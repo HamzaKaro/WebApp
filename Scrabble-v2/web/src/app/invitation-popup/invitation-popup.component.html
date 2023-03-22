@@ -1,0 +1,7 @@
+<h1>Invitation</h1>
+<div>
+    {{invitation.usernameSender}} <span translate="friend.message_invitation">   </span>
+</div>
+
+<button class="button" (click)="accept(); playSound('Selection-options')" translate="friend.accept_invitation"></button>
+<button class="button deny" (click)="refuse(); playSound('Selection-options')" translate="friend.deny_invitation"></button>

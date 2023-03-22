@@ -1,0 +1,154 @@
+<header>
+    <div class="icon hidden-icon">
+        <button mat-fab color="primary" class="fab-button">
+            <mat-icon class="fab-icon">more_horiz</mat-icon>
+        </button>
+    </div>
+    <img src="assets/scrabble_hero.png" alt="Logo Scrabble" />       
+    <div class="icon hidden-icon">
+        <button mat-fab color="primary" class="fab-button">
+            <mat-icon class="fab-icon">more_horiz</mat-icon>
+        </button>
+    </div>
+</header>
+
+<body>
+    <p class="title" translate="config_game.title"></p>
+    <div class="flex-container">
+        <form [formGroup]="gameForm">
+            <div class="error-message-container" *ngIf="isServerUnreachable">
+                <mat-icon>error_outline</mat-icon>
+                <div class="error-message">Serveur indisponible, veuillez réessayer plus tard</div>
+            </div>
+            <div class="error-message-container" *ngIf="room.roomInfo.gameType !== 'log2990' && room.roomInfo.gameType !== 'classic'">
+                <mat-icon>error_outline</mat-icon>
+                <div class="error-message">Votre mode de jeu est invalide, veuillez revenir en arrière</div>
+            </div>
+
+            <div *ngIf="isSolo">
+                <div class="gray-box" *ngIf="isSolo">
+                    <div class="stylish-input">
+                        <label> Nom du Bot </label>
+                        <input class="input" type="text" id="pseudo" name="pseudo" [value]="botName" disabled />
+                    </div>
+                    <div class="stylish-input">
+                        <label> Difficulté </label>
+                        <select class="input" formControlName="level" (change)="changeBotName()">
+                            <option value="beginner">Débutant</option>
+                            <option value="expert">Expert</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gray-box">
+                <div class="stylish-input">
+                    <label translate="config_game.pseudo_label"></label>
+                    <input class="input" type="text" id="pseudo" name="pseudo" [value]="userPseudo" disabled />
+                    <!-- <input
+                        class="input"
+                        placeholder="ex. username"
+                        type="text"
+                        id="pseudo"
+                        name="pseudo"
+                        formControlName="pseudo"
+                        autocomplete="off"
+                    /> -->
+                </div>
+                <!-- <div class="error-message-container" *ngIf="isPseudoTooLong()">
+                    <mat-icon>error_outline</mat-icon>
+                    <div class="error-message">Votre pseudo doit avoir moins de {{ maxPseudoLength }} caractères</div>
+                </div> -->
+                <div class="stylish-input">
+                    <label translate="config_game.time_label"></label>
+                    <input
+                        onkeydown="return false"
+                        class="input"
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        min="30"
+                        max="300"
+                        step="30"
+                        formControlName="timerPerTurn"
+                    />
+                </div>
+                <div class="stylish-input">
+                    <label translate="config_game.human_player_nb_label"></label>
+                    <input
+                        onkeydown="return false"
+                        class="input"
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        min="2"
+                        max="4"
+                        step="1"
+                        formControlName="nbHumans"
+                    />
+                </div>
+                <div class="stylish-input">
+                <label translate="config_game.public_mode_label"></label>
+                
+                <label class="switch">
+                    
+                    <input type="checkbox" (checked)="isPublic" (change)="isPublic=!isPublic">
+                    <span class="slider round"></span>
+                    
+                  </label>
+                <label translate="config_game.private_mode_label"></label>
+                </div>
+                <div *ngIf="isPublic" class="stylish-input">
+                    <label translate="config_game.password_label"></label>
+                    <input
+                        class="input"
+                        type="text"
+                        id="pw"
+                        name="pw"
+                        formControlName="pw"
+                        autocomplete="off"
+                    />
+                </div>
+                <mat-radio-group aria-label="Select an option">
+                    <h2 translate="config_game.dictionary_label" ></h2>
+                    <div class="dictionaries-container">
+                        <div *ngFor="let dictionary of dictionaries" class="dictionary-info-container">
+                            <mat-radio-button
+                                value="{{ dictionary.title }}"
+                                (click)="handleDictionarySelection(dictionary.title)"
+                                [checked]="isSelectedDictionary(dictionary.title)"
+                            ></mat-radio-button>
+                            <div class="dictionary-info">
+                                <p translate="config_game.dictionary_radiotile"></p>
+                                <p>{{ dictionary.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </mat-radio-group>
+
+                <div class="confirm-buttons-container">
+                    <button class="button important-button" routerLink="/game/option" (click)="playSound('Selection-options')" translate="config_game.return_button"></button>
+                    <div *ngIf="isSolo">
+                        <app-start-game-solo
+                            class="start-game"
+                            [gameForm]="gameForm"
+                            [gameData]="gameData"
+                            [botName]="botName"
+                            (dictionaryDeleted)="handleDictionaryDeleted()"
+                            (httpError)="handleHttpError()"
+                        ></app-start-game-solo>
+                    </div>
+                    <div *ngIf="!isSolo">
+                        <app-start-game
+                            type="submit "
+                            [isPublic]="isPublic"
+                            [gameForm]="gameForm"
+                            (dictionaryDeleted)="handleDictionaryDeleted()"
+                            (httpError)="handleHttpError()"
+                        ></app-start-game>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>

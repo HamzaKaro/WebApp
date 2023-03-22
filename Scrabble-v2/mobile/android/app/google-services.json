@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "469271159061",
+    "firebase_url": "https://polyscrabble-76a8b-default-rtdb.firebaseio.com",
+    "project_id": "polyscrabble-76a8b",
+    "storage_bucket": "polyscrabble-76a8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469271159061:android:7e2bb014e2063c7cc4091c",
+        "android_client_info": {
+          "package_name": "com.example.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469271159061-bq5gaj7e6p1sir5k4j0ib5omc2i5u1fp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMWTjHrKGf0PsWMLTvT9BOHq7j9FkNG1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469271159061-bq5gaj7e6p1sir5k4j0ib5omc2i5u1fp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

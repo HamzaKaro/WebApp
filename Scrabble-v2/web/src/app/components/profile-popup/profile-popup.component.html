@@ -1,0 +1,10 @@
+<div class="popup-page-container">
+    <button mat-fab color="primary" class="fab-button" (click)="close()">
+        <mat-icon class="fab-icon">close</mat-icon>
+    </button>
+    <app-statistics-page *ngIf="this.pageToDisplay === 'statistics'"></app-statistics-page>
+    <app-user-account-page *ngIf="this.pageToDisplay === 'profile'"></app-user-account-page>
+    <app-connexions-history *ngIf="this.pageToDisplay === 'connexions'"></app-connexions-history>
+    <app-settings *ngIf="this.pageToDisplay === 'parameters'"></app-settings>
+    <app-friendlist *ngIf="this.pageToDisplay === 'friendlist'"></app-friendlist>
+</div>

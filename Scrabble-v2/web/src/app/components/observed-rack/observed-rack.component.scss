@@ -1,0 +1,64 @@
+#mouse-position-display {
+    border-radius: 10px;
+    border: 3px solid #515151;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+    height: 150px;
+}
+
+#rackCanvas {
+    cursor: default;
+}
+#rackCanvas[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+.tile {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2px;
+    padding: 12px;
+    height: 20px;
+    background-color: bisque;
+}
+.rack {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    padding: 15px;
+    color: black;
+}
+
+.button-container {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    min-height: 35px;
+    min-width: 320px;
+    padding: 10px;
+}
+
+
+.score {
+    /* width: 100%; */
+    /* height: 100%; */
+    font-size: 11px;
+    text-align:right;
+    vertical-align:bottom;
+}
+
+.button-container .button {
+    height: 50px;
+}
+
+#mouse-position-display .button {
+    max-width: 150px;
+}

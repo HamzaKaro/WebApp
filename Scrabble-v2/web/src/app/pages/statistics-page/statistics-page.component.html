@@ -1,0 +1,45 @@
+<div class="page-container">
+    <div>
+        <h2 translate="statistics_page.title"></h2>
+        <div class="row1">
+            <mat-card>
+                <mat-card-content class="statistics-card">
+                    <span translate="statistics_page.number_games_played"></span>{{statistics.nGamesPlayed}}</mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-content class="statistics-card">
+                    <span translate="statistics_page.number_games_won"></span>{{statistics.nGamesWon}}
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="row2">
+            <mat-card>
+                <mat-card-content class="statistics-card">
+                    <span translate="statistics_page.average_games_points"></span>{{statistics.averageGamePoints}} points</mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-content class="statistics-card">
+                    <span translate="statistics_page.average_games_duration"></span>{{handleDuration(statistics.averageGameDuration)}}</mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div>
+        <h2 translate="statistics_page.games_history"></h2>
+        <div class="games-container">
+            <mat-card *ngFor="let game of this.gamesPlayed.reverse()">
+                <mat-card-content class="statistics-card">
+                    <p>{{game.joinTime}}</p>
+                    <p>{{handleDuration(game.gameDuration)}}</p>
+                    <!-- The server stores a victory, defeat, abandon and tie as the following : 'V', 'D', 'A', 'T' -->
+                    <p *ngIf="game.endType.toLowerCase() === 'v'" translate="statistics_page.win"></p>
+                    <p *ngIf="game.endType.toLowerCase() === 'd'" translate="statistics_page.defeat"></p>
+                    <p *ngIf="game.endType.toLowerCase() === 'a'" translate="statistics_page.abandon"></p>
+                    <p *ngIf="game.endType.toLowerCase() === 't'" translate="statistics_page.draw"></p>
+                    <p>{{game.score}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+
+    </div>
+</div>

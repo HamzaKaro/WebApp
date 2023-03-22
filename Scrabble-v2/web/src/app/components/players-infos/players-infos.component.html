@@ -1,0 +1,29 @@
+<div *ngIf="!this.player.isObserver" class="player-info-container">
+    <div class="timer">{{ ('0' + min).slice(-2) }}:{{ ('0' + sec).slice(-2) }}</div>
+    <div class="players-container" *ngFor="let player of this.room.players; let i = index">
+        <div *ngIf="!player.isObserver" class="player" [ngClass]="{ 'is-current': player.isItsTurn }">
+            <span class="player-name">{{ player.pseudo }} {{ player.pseudo === this.room.currentPlayerPseudo ? ' (vous)' : '' }}</span
+            ><span class="player-score">{{ player.points }}</span>
+        </div>
+    </div>
+    <!-- <div *ngIf="isGameOver && numberOfWinner === 1" class="flex-center">Félicitation à: {{ winnerPseudo }}!</div>
+    <div *ngIf="isGameOver && numberOfWinner > 1" class="flex-center">
+        Félicitation à: {{ getPlayerInfo(true, 'pseudo') }} et {{ getPlayerInfo(false, 'pseudo') }}!
+    </div> -->
+</div>
+<div *ngIf="this.player.isObserver" class="player-info-container">
+    <div class="timer">{{ ('0' + min).slice(-2) }}:{{ ('0' + sec).slice(-2) }}</div>
+    <div class="players-container" *ngFor="let player of this.room.players; let i = index">
+        <div *ngIf="!player.isObserver" class="player" [ngClass]="{ 'is-current': player.isItsTurn }">
+            <span class="player-name">{{ player.pseudo }} {{ player.pseudo === this.room.currentPlayerPseudo ? ' (vous)' : '' }}</span>
+            <span class="player-score">{{ player.points }}</span>
+            <app-observed-rack id="observedrack" [rackIndex]="i"></app-observed-rack>
+            <button *ngIf="player.pseudo.startsWith('bot ')" class="button" (click)="replaceBot(player)">Remplacer</button>
+        </div>
+    </div>
+    <!-- <div *ngIf="isGameOver && numberOfWinner === 1" class="flex-center">Félicitation à: {{ winnerPseudo }}!</div>
+    <div *ngIf="isGameOver && numberOfWinner > 1" class="flex-center">
+        Félicitation à: {{ getPlayerInfo(true, 'pseudo') }} et {{ getPlayerInfo(false, 'pseudo') }}!
+    </div> -->
+</div>
+<!-- *ngIf="!player.isObserver && this.player.isObserver" -->

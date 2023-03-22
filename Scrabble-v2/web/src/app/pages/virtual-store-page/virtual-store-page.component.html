@@ -1,0 +1,47 @@
+<p class="title"><span translate="shop.title_page"></span></p>
+<div class="main-container">
+    <div class="gray-box">
+        <div class="stylish-input">
+            <label translate="shop.current_token_user_msg"> </label>
+            <input class="input" type="text" id="userCoins" name="userCoins" [value]="this.loggedUser.coins" disabled />
+        </div>
+    </div>
+    <div>
+        <h1 class="item-list-title"><span translate="shop.title_items_list"></span></h1>
+        <app-item-shop class="content-list" *ngFor="let item of items" [item]="item" (click)="addItemToCart(item)"></app-item-shop>
+    </div>
+
+    <div class="parent">
+        <h1 translate="shop.title_shoppind_cart_list"></h1>
+        <div class="information-message-container" *ngIf="shoppingCart.length === 0">
+            <mat-icon>error_outline</mat-icon>
+            <div class="information-message"><span translate="shop.empty_cart_msg"></span></div>
+        </div>
+        <mat-list>
+            <cdk-virtual-scroll-viewport [itemSize]="2" class="viewport">
+                <app-shopping-cart
+                    *ngFor="let item of shoppingCart"
+                    [itemsShoppingCart]="item"
+                    (click)="removeItemFromCart(item); playSound('Selection-options')"
+                ></app-shopping-cart>
+            </cdk-virtual-scroll-viewport>
+        </mat-list>
+    </div>
+    <div class="important-information">
+        <h2><span translate="shop.total_token_title"></span>&ensp;&ensp;{{ totalPrice }}&ensp;</h2>
+
+        <mat-icon [ngStyle]="{ color: 'rgb(224, 173, 33)' }">generating_tokens </mat-icon>
+    </div>
+
+    <div class="container">
+        <button [disabled]="isDisabledCancelButton" class="button cancel" (click)="cancelTransaction()">
+            <span translate="shop.empty_button"></span>
+        </button>
+        <button [disabled]="isDisabledBuyButton" class="button buy" (click)="buyItemsFromCart(); specialPlaySound(); openSnackBar('X')">
+            <span translate="shop.buy_button"></span>
+        </button>
+    </div>
+    <button class="button important-button" routerLink="/home" (click)="cancelTransaction(); playSound('Selection-options')">
+        <span translate="shop.return_button"></span>
+    </button>
+</div>

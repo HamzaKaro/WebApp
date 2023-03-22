@@ -1,0 +1,17 @@
+<h1 translate="friend.friend_invitation"> </h1>
+<form [formGroup]="invitationForm">
+    <div class="information-message-container information" *ngIf="!hasFriend">
+        <mat-icon>error_outline</mat-icon>
+        <div class="information-message" translate="friend.no_friend"></div>
+    </div>
+    <div class="gray-box" *ngIf="hasFriend">
+        <form [formGroup]="invitationForm">
+            <div class="stylish-input">
+                <select class="input" formControlName="invitedFriend"  (change)="onChange()" [value]="selected">
+                    <option *ngFor="let friend of availableFriends; let i = index;" [ngValue]="friend" [selected]="selected === friend" >{{friend.username}}</option>
+                </select>
+                <button class="button" (click)="inviteFriend(); playSound('Selection-options')" translate="friend.invite"></button>
+            </div>
+        </form>
+    </div>
+</form>

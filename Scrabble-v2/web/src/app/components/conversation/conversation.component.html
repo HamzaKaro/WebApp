@@ -1,0 +1,54 @@
+<!-- <button mat-fab color="primary" aria-label="Example icon button with a delete icon" class="chat-button" (click)="toggleChat()">
+    <mat-icon>{{isChatOpen ? 'close' : 'chat_bubble'}}</mat-icon>
+</button> -->
+
+<div class="frame" *ngIf="isChatOpen">
+    <div class="frame-header">
+        <button mat-fab color="primary" *ngIf="isViewingChannel" (click)="viewChannels()" class="fab-button">
+            <mat-icon class="fab-icon">arrow_back</mat-icon>
+        </button>
+        <h2 *ngIf="isViewingChannel">{{ getChannelDisplayName(viewingChannel) }}</h2>
+        <h2  *ngIf="!isViewingChannel" translate="chat.chat"></h2>
+        <button mat-fab color="primary" *ngIf="isViewingChannel" class="fab-button" [matMenuTriggerFor]="menu">
+            <mat-icon class="fab-icon">more_horiz</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item [disabled]="!isChannelLeaveable()" (click)="leaveChannel()">
+                <mat-icon>directions_run</mat-icon>
+                <span translate="chat.leave_channel"></span>
+            </button>
+            <button mat-menu-item [disabled]="!isChannelDeletable()" (click)="deleteChannel()">
+                <mat-icon>delete</mat-icon>
+                <span translate="chat.delete_channel"></span>
+            </button>
+        </mat-menu>
+        <button mat-fab color="primary" *ngIf="!isViewingChannel" class="fab-button" [matMenuTriggerFor]="channelMenu">
+            <mat-icon class="fab-icon">more_horiz</mat-icon>
+        </button>
+        <mat-menu #channelMenu="matMenu" xPosition="before">
+            <button mat-menu-item (click)="addChannel()">
+                <mat-icon>add</mat-icon>
+                <span translate="chat.create_channel"></span>
+            </button>
+            <button mat-menu-item (click)="openCreatePrivateConversationDialog()">
+                <mat-icon>add</mat-icon>
+                <span translate="chat.create_private_channel"></span>
+            </button>
+            <button mat-menu-item (click)="getAllChannels()">
+                <mat-icon>groups</mat-icon>
+                <span translate="chat.join_channel"></span>
+            </button>
+        </mat-menu>
+    </div>
+
+    <div class="channels-list-container" *ngIf="!isViewingChannel">
+        <mat-nav-list class="channels-container" *ngIf="!isViewingChannel && isChatOpen">
+            <div *ngFor="let channel of channelService.getAllChannels()">
+                <mat-list-item class="channel-list-item" (click)="enterChannel(channel)">{{ getChannelDisplayName(channel) }}</mat-list-item>
+            </div>
+        </mat-nav-list>
+    </div>
+    <div *ngIf="isChatOpen && isViewingChannel">
+        <app-chat class="viewed-chat-channel"></app-chat>
+    </div>
+</div>

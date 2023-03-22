@@ -1,0 +1,45 @@
+<button mat-fab color="primary" class="fab-button" (click)="returnToPreviousPage()">
+    <mat-icon class="fab-icon">arrow_back</mat-icon>
+</button>
+<div class="container">
+    <div class="sign-up-page-container">
+        <h1 translate="auth.create_an_account"></h1>
+
+
+        <div class="error-message-container" *ngIf="errorMessage">
+            <mat-icon>error_outline</mat-icon>
+            <div class="error-message">{{errorMessage}}</div>
+        </div>
+        
+
+        <form class="sign-up-form" [formGroup]="signUpForm" autocomplete="off">
+            <div class="preview-avatar" >
+                <article>
+                    <img 
+                        fxFlex="nogrow"
+                        class="gallery__picture"
+                        alt="Avatar"
+                        [src]="urlAvatar">
+                </article>
+                <button mat-flat-button color="primary" (click)="openUploadAvatarPopup()" matTooltip="Choisir Avatar" translate="signup.choose_avatar"></button>
+            </div>
+            <mat-form-field class="full-width-field" appearance="fill">
+                <mat-label translate="profile_page.pseudo"></mat-label>
+                <input type="text" matInput formControlName="pseudo" placeholder="Ex : Goldorak" [disabled]="isValidatingCredentials">
+            </mat-form-field>
+            <div style="color: red;" *ngIf="pseudo.invalid && pseudo.value.length > 0" translate="profile_page.invalid_pseudo_length"></div>
+            <mat-form-field class="full-width-field" appearance="fill">
+                <mat-label translate="profile_page.email"></mat-label>
+                <input type="text" matInput formControlName="email" placeholder="Ex : nikolay@gmail.com" [disabled]="isValidatingCredentials">
+            </mat-form-field>
+            <div style="color: red;" *ngIf="email.invalid && email.value.length > 0" translate="signup.email_requirement"> </div>
+            <mat-form-field class="full-width-field" appearance="fill">
+                <mat-label translate="auth.password"></mat-label>
+                <input type="password" matInput formControlName="password" [disabled]="isValidatingCredentials">
+            </mat-form-field>
+            <div style="color: red;" *ngIf="password.invalid && password.value.length > 0" translate="auth.error.password_length"></div>
+        </form>
+
+        <button class="button connect-button" (click)="signUp()" [disabled]="!isFormValid() || isValidatingCredentials" translate="signup.signup"></button>
+    </div>
+</div>
